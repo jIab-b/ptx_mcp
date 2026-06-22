@@ -1,4 +1,4 @@
-#### 9.7.3.13. Floating Point Instructions: rcp 
+#### 9.7.3.13. Floating Point Instructions: `rcp`
 
 `rcp`
 
@@ -8,12 +8,8 @@ Syntax
 
 ```
 rcp.approx{.ftz}.f32  d, a;  // fast, approximate reciprocal
-
 rcp.rnd{.ftz}.f32     d, a;  // IEEE 754 compliant rounding
-
 rcp.rnd.f64           d, a;  // IEEE 754 compliant rounding
-
-
 
 .rnd = { .rn, .rz, .rm, .rp };
 ```
@@ -32,8 +28,7 @@ Notes
 
 Fast, approximate single-precision reciprocal:
 
-`rcp.approx.f32` implements a fast approximation to reciprocal.
-The maximum ulp error is 1 across the full range of inputs.
+`rcp.approx.f32` implements a fast approximation to reciprocal. The maximum ulp error is 1 across the full range of inputs.
 
 | Input | Result |
 | --- | --- |
@@ -47,40 +42,43 @@ Reciprocal with IEEE 754 compliant rounding:
 
 Rounding modifiers (no default):
 
-`.rn`
-:   mantissa LSB rounds to nearest even
+**`.rn`**
 
-`.rz`
-:   mantissa LSB rounds towards zero
+mantissa LSB rounds to nearest even
 
-`.rm`
-:   mantissa LSB rounds towards negative infinity
+**`.rz`**
 
-`.rp`
-:   mantissa LSB rounds towards positive infinity
+mantissa LSB rounds towards zero
+
+**`.rm`**
+
+mantissa LSB rounds towards negative infinity
+
+**`.rp`**
+
+mantissa LSB rounds towards positive infinity
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `rcp.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   `rcp.f64` supports subnormal numbers.
+`rcp.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
 
-    `rcp.f32` flushes subnormal inputs and results to sign-preserving zero.
+**`sm_1x`**
+
+`rcp.f64` supports subnormal numbers.
+
+`rcp.f32` flushes subnormal inputs and results to sign-preserving zero.
 
 PTX ISA Notes
 
-`rcp.f32` and `rcp.f64` introduced in PTX ISA version 1.0. `rcp.rn.f64` and explicit modifiers
-`.approx` and `.ftz` were introduced in PTX ISA version 1.4. General rounding modifiers were
-added in PTX ISA version 2.0.
+`rcp.f32` and `rcp.f64` introduced in PTX ISA version 1.0. `rcp.rn.f64` and explicit modifiers `.approx` and `.ftz` were introduced in PTX ISA version 1.4. General rounding modifiers were added in PTX ISA version 2.0.
 
 For PTX ISA version 1.4 and later, one of `.approx` or `.rnd` is required.
 
-For PTX ISA versions 1.0 through 1.3, `rcp.f32` defaults to `rcp.approx.ftz.f32`, and
-`rcp.f64` defaults to `rcp.rn.f64`.
+For PTX ISA versions 1.0 through 1.3, `rcp.f32` defaults to `rcp.approx.ftz.f32`, and `rcp.f64` defaults to `rcp.rn.f64`.
 
 Target ISA Notes
 
@@ -96,8 +94,6 @@ Examples
 
 ```
 rcp.approx.ftz.f32  ri,r;
-
 rcp.rn.ftz.f32      xi,x;
-
 rcp.rn.f64          xi,x;
 ```

@@ -1,4 +1,4 @@
-#### 9.7.3.9. Floating Point Instructions: abs 
+#### 9.7.3.9. Floating Point Instructions: `abs`
 
 `abs`
 
@@ -8,7 +8,6 @@ Syntax
 
 ```
 abs{.ftz}.f32  d, a;
-
 abs.f64        d, a;
 ```
 
@@ -26,19 +25,19 @@ Notes
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `abs.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   `abs.f64` supports subnormal numbers.
+`abs.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
 
-    `abs.f32` flushes subnormal inputs and results to sign-preserving zero.
+**`sm_1x`**
 
-For `abs.f32`, `NaN` input yields unspecified `NaN`. For `abs.f64`, `NaN` input is passed
-through unchanged. Future implementations may comply with the IEEE 754 standard by preserving
-payload and modifying only the sign bit.
+`abs.f64` supports subnormal numbers.
+
+`abs.f32` flushes subnormal inputs and results to sign-preserving zero.
+
+For `abs.f32`, `NaN` input yields unspecified `NaN`. For `abs.f64`, `NaN` input is passed through unchanged. Future implementations may comply with the IEEE 754 standard by preserving payload and modifying only the sign bit.
 
 PTX ISA Notes
 

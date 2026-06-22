@@ -1,4 +1,4 @@
-#### 9.7.5.3. Mixed Precision Floating Point Instructions: fma 
+#### 9.7.5.3. Mixed Precision Floating Point Instructions: `fma`
 
 `fma`
 
@@ -9,18 +9,13 @@ Syntax
 ```
 fma.rnd{.sat}.f32.abtype  d, a, b, c;
 
-
-
 .abtype = { .f16, .bf16};
-
 .rnd    = { .rn, .rz, .rm, .rp };
 ```
 
 Description
 
-Converts input operands `a` and `b` from `.atype` into `.f32` type. The converted values
-are then used to perform fused multiply-add operation with no loss of precision in the intermediate
-product and addition. The resulting value is stored in the destination operand `d`.
+Converts input operands `a` and `b` from `.atype` into `.f32` type. The converted values are then used to perform fused multiply-add operation with no loss of precision in the intermediate product and addition. The resulting value is stored in the destination operand `d`.
 
 Semantics
 
@@ -30,29 +25,33 @@ d = convert(a) * convert(b) + c;
 
 Notes
 
-`fma.f32.{f16/bf16}` computes the product of `a` and `b` to infinite precision and then adds
-`c` to this product, again in infinite precision. The resulting value is then rounded to single
-precision using the rounding mode specified by `.rnd`.
+`fma.f32.{f16/bf16}` computes the product of `a` and `b` to infinite precision and then adds `c` to this product, again in infinite precision. The resulting value is then rounded to single precision using the rounding mode specified by `.rnd`.
 
 Rounding modifiers(no default):
 
-`.rn`
-:   mantissa LSB rounds to nearest even
+**`.rn`**
 
-`.rz`
-:   mantissa LSB rounds towards zero
+mantissa LSB rounds to nearest even
 
-`.rm`
-:   mantissa LSB rounds towards negative infinity
+**`.rz`**
 
-`.rp`
-:   mantissa LSB rounds towards positive infinity
+mantissa LSB rounds towards zero
 
-Subnormal numbers:
-:   By default, subnormal numbers are supported.
+**`.rm`**
 
-Saturation modifier:
-:   `fma.sat` clamps the result to [0.0, 1.0]. `NaN` results are flushed to `+0.0f`.
+mantissa LSB rounds towards negative infinity
+
+**`.rp`**
+
+mantissa LSB rounds towards positive infinity
+
+**Subnormal numbers:**
+
+By default, subnormal numbers are supported.
+
+**Saturation modifier:**
+
+`fma.sat` clamps the result to [0.0, 1.0]. `NaN` results are flushed to `+0.0f`.
 
 PTX ISA Notes
 
@@ -66,8 +65,6 @@ Examples
 
 ```
 .reg .f32 fc, fd;
-
 .reg .f16 ha, hb;
-
 fma.rz.sat.f32.f16.sat   fd, ha, hb, fc;
 ```

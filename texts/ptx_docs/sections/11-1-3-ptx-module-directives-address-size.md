@@ -1,4 +1,4 @@
-### 11.1.3. PTX Module Directives: .address_size 
+### 11.1.3. PTX Module Directives: `.address_size`
 
 `.address_size`
 
@@ -8,17 +8,14 @@ Syntax
 
 ```
 .address_size  address-size
-
 address-size = { 32, 64 };
 ```
 
 Description
 
-Specifies the address size assumed throughout the module by the PTX code and the binary DWARF
-information in PTX.
+Specifies the address size assumed throughout the module by the PTX code and the binary DWARF information in PTX.
 
-Redefinition of this directive within a module is not allowed. In the presence of separate
-compilation all modules must specify (or default to) the same address size.
+Redefinition of this directive within a module is not allowed. In the presence of separate compilation all modules must specify (or default to) the same address size.
 
 The `.address_size` directive is optional, but it must immediately follow the `.target`directive if present within a module.
 
@@ -38,26 +35,15 @@ Examples
 
 ```
 // example directives
-
    .address_size 32       // addresses are 32 bit
-
    .address_size 64       // addresses are 64 bit
 
-
-
 // example of directive placement within a module
-
    .version 2.3
-
    .target sm_20
-
    .address_size 64
-
 ...
-
 .entry foo () {
-
 ...
-
 }
 ```

@@ -1,15 +1,13 @@
-#### 9.7.8.4. Logic and Shift Instructions: not 
+#### 9.7.8.4. Logic and Shift Instructions: `not`
 
 `not`
 
-Bitwise negation; one’s complement.
+Bitwise negation; oneâs complement.
 
 Syntax
 
 ```
 not.type d, a;
-
-
 
 .type = { .pred, .b16, .b32, .b64 };
 ```
@@ -42,6 +40,5 @@ Examples
 
 ```
 not.b32  mask,mask;
-
 not.pred  p,q;
 ```

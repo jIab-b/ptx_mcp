@@ -1,4 +1,4 @@
-### 11.6.1. Linking Directives: .extern 
+### 11.6.1. Linking Directives: `.extern`
 
 `.extern`
 
@@ -12,10 +12,7 @@ Syntax
 
 Description
 
-Declares identifier to be defined external to the current module. The module defining such
-identifier must define it as `.weak` or `.visible` only once in a single object file. Extern
-declaration of symbol may appear multiple times and references to that get resolved against the
-single definition of that symbol.
+Declares identifier to be defined external to the current module. The module defining such identifier must define it as `.weak` or `.visible` only once in a single object file. Extern declaration of symbol may appear multiple times and references to that get resolved against the single definition of that symbol.
 
 PTX ISA Notes
 

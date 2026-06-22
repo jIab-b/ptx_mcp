@@ -1,4 +1,4 @@
-## 10.3. Special Registers: %laneid 
+## 10.3. Special Registers: `%laneid`
 
 `%laneid`
 
@@ -12,8 +12,7 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register that returns the thread’s lane within the warp. The lane
-identifier ranges from zero to `WARP_SZ-1`.
+A predefined, read-only special register that returns the threadâs lane within the warp. The lane identifier ranges from zero to `WARP_SZ-1`.
 
 PTX ISA Notes
 

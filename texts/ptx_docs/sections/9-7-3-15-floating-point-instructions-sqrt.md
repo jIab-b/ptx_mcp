@@ -1,4 +1,4 @@
-#### 9.7.3.15. Floating Point Instructions: sqrt 
+#### 9.7.3.15. Floating Point Instructions: `sqrt`
 
 `sqrt`
 
@@ -8,12 +8,8 @@ Syntax
 
 ```
 sqrt.approx{.ftz}.f32  d, a; // fast, approximate square root
-
 sqrt.rnd{.ftz}.f32     d, a; // IEEE 754 compliant rounding
-
 sqrt.rnd.f64           d, a; // IEEE 754 compliant rounding
-
-
 
 .rnd = { .rn, .rz, .rm, .rp };
 ```
@@ -30,12 +26,9 @@ d = sqrt(a);
 
 Notes
 
-`sqrt.approx.f32` implements a fast approximation to square root.
-The maximum relative error over the entire positive finite floating-point
-range is 2-23.
+`sqrt.approx.f32` implements a fast approximation to square root. The maximum relative error over the entire positive finite floating-point range is 2-23.
 
-For various corner-case inputs, results of `sqrt` instruction are shown
-in below table:
+For various corner-case inputs, results of `sqrt` instruction are shown in below table:
 
 | Input | Result |
 | --- | --- |
@@ -50,40 +43,43 @@ Square root with IEEE 754 compliant rounding:
 
 Rounding modifiers (no default):
 
-`.rn`
-:   mantissa LSB rounds to nearest even
+**`.rn`**
 
-`.rz`
-:   mantissa LSB rounds towards zero
+mantissa LSB rounds to nearest even
 
-`.rm`
-:   mantissa LSB rounds towards negative infinity
+**`.rz`**
 
-`.rp`
-:   mantissa LSB rounds towards positive infinity
+mantissa LSB rounds towards zero
+
+**`.rm`**
+
+mantissa LSB rounds towards negative infinity
+
+**`.rp`**
+
+mantissa LSB rounds towards positive infinity
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `sqrt.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   `sqrt.f64` supports subnormal numbers.
+`sqrt.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
 
-    `sqrt.f32` flushes subnormal inputs and results to sign-preserving zero.
+**`sm_1x`**
+
+`sqrt.f64` supports subnormal numbers.
+
+`sqrt.f32` flushes subnormal inputs and results to sign-preserving zero.
 
 PTX ISA Notes
 
-`sqrt.f32` and `sqrt.f64` introduced in PTX ISA version 1.0. `sqrt.rn.f64` and explicit
-modifiers `.approx` and `.ftz` were introduced in PTX ISA version 1.4. General rounding
-modifiers were added in PTX ISA version 2.0.
+`sqrt.f32` and `sqrt.f64` introduced in PTX ISA version 1.0. `sqrt.rn.f64` and explicit modifiers `.approx` and `.ftz` were introduced in PTX ISA version 1.4. General rounding modifiers were added in PTX ISA version 2.0.
 
 For PTX ISA version 1.4 and later, one of `.approx` or `.rnd` is required.
 
-For PTX ISA versions 1.0 through 1.3, `sqrt.f32` defaults to `sqrt.approx.ftz.f32`, and
-`sqrt.f64` defaults to `sqrt.rn.f64`.
+For PTX ISA versions 1.0 through 1.3, `sqrt.f32` defaults to `sqrt.approx.ftz.f32`, and `sqrt.f64` defaults to `sqrt.rn.f64`.
 
 Target ISA Notes
 
@@ -99,8 +95,6 @@ Examples
 
 ```
 sqrt.approx.ftz.f32  r,x;
-
 sqrt.rn.ftz.f32      r,x;
-
 sqrt.rn.f64          r,x;
 ```

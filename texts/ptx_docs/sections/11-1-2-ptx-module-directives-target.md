@@ -1,4 +1,4 @@
-### 11.1.2. PTX Module Directives: .target 
+### 11.1.2. PTX Module Directives: `.target`
 
 `.target`
 
@@ -8,85 +8,48 @@ Syntax
 
 ```
 .target stringlist         // comma separated list of target specifiers
-
 string = { sm_120a, sm_120f, sm_120,          // sm_12x target architectures
-
            sm_121a, sm_121f, sm_121,          // sm_12x target architectures
-
            sm_110a, sm_110f, sm_110,          // sm_11x target architectures
-
            sm_100a, sm_100f, sm_100,          // sm_10x target architectures
-
            sm_101a, sm_101f, sm_101,          // sm_10x target architectures
-
            sm_103a, sm_103f, sm_103           // sm_10x target architectures
-
            sm_90a, sm_90,                     // sm_9x target architectures
-
            sm_80, sm_86, sm_87, sm_88, sm_89, // sm_8x target architectures
-
            sm_70, sm_72, sm_75,               // sm_7x target architectures
-
            sm_60, sm_61, sm_62,               // sm_6x target architectures
-
            sm_50, sm_52, sm_53,               // sm_5x target architectures
-
            sm_30, sm_32, sm_35, sm_37,        // sm_3x target architectures
-
            sm_20,                             // sm_2x target architectures
-
            sm_10, sm_11, sm_12, sm_13,        // sm_1x target architectures
-
            texmode_unified, texmode_independent,   // texturing mode
-
            debug,                                  // platform option
-
            map_f64_to_f32 };                       // platform option
 ```
 
 Description
 
-Specifies the set of features in the target architecture for which the current PTX code was
-generated. In general, generations of SM architectures follow an *onion layer* model, where each
-generation adds new features and retains all features of previous generations. The onion layer model
-allows the PTX code generated for a given target to be run on later generation devices.
+Specifies the set of features in the target architecture for which the current PTX code was generated. In general, generations of SM architectures follow an *onion layer* model, where each generation adds new features and retains all features of previous generations. The onion layer model allows the PTX code generated for a given target to be run on later generation devices.
 
-Target architectures with suffix “`a`”, such as `sm_90a`, include architecture-specific
-features that are supported on the specified architecture only, hence such targets do not follow the
-onion layer model. Therefore, PTX code generated for such targets cannot be run on later generation
-devices. Architecture-specific features can only be used with targets that support these
-features.
+Target architectures with suffix â`a`â, such as `sm_90a`, include architecture-specific features that are supported on the specified architecture only, hence such targets do not follow the onion layer model. Therefore, PTX code generated for such targets cannot be run on later generation devices. Architecture-specific features can only be used with targets that support these features.
 
-Target architectures with suffix “`f`”, such as `sm_100f`, include family-specific features that
-are supported only within the same architecture family. Therefore, PTX code generated for such
-targets can run only on later generation devices in the same family. Family-specific features can be
-used with f-targets as well as a-targets of later generation devices in the same family.
+Target architectures with suffix â`f`â, such as `sm_100f`, include family-specific features that are supported only within the same architecture family. Therefore, PTX code generated for such targets can run only on later generation devices in the same family. Family-specific features can be used with f-targets as well as a-targets of later generation devices in the same family.
 
-[Table 56](#architecture-family-definition) defines the architecture families.
+[Table 61](#architecture-family-definition) defines the architecture families.
 
-Table 56 Architecture Families[](#architecture-family-definition "Permalink to this table")
-
-
-
+**Table 61 Architecture Families**
 
 | Family | Target SM architectures included |
 | --- | --- |
-| sm\_10x family | sm\_100f, sm\_103f, future targets in sm\_10x family |
-| sm\_11x family | sm\_110f, sm\_101f, future targets in sm\_11x family |
-| sm\_12x family | sm\_120f, sm\_121f, future targets in sm\_12x family |
+| sm_10x family | sm_100f, sm_103f, future targets in sm_10x family |
+| sm_11x family | sm_110f, sm_101f, future targets in sm_11x family |
+| sm_12x family | sm_120f, sm_121f, future targets in sm_12x family |
 
 Semantics
 
-Each PTX module must begin with a `.version` directive, immediately followed by a `.target`
-directive containing a target architecture and optional platform options. A `.target` directive
-specifies a single target architecture, but subsequent `.target` directives can be used to change
-the set of target features allowed during parsing. A program with multiple `.target` directives
-will compile and run only on devices that support all features of the highest-numbered architecture
-listed in the program.
+Each PTX module must begin with a `.version` directive, immediately followed by a `.target` directive containing a target architecture and optional platform options. A `.target` directive specifies a single target architecture, but subsequent `.target` directives can be used to change the set of target features allowed during parsing. A program with multiple `.target` directives will compile and run only on devices that support all features of the highest-numbered architecture listed in the program.
 
-PTX features are checked against the specified target architecture, and an error is generated if an
-unsupported feature is used. The following table summarizes the features in PTX that vary according
-to target architecture.
+PTX features are checked against the specified target architecture, and an error is generated if an unsupported feature is used. The following table summarizes the features in PTX that vary according to target architecture.
 
 | Target | Description |
 | --- | --- |
@@ -131,8 +94,8 @@ to target architecture.
 | Target | Description |
 | --- | --- |
 | `sm_70` | Baseline feature set for `sm_70` architecture. |
-| `sm_72` | Adds support for integer multiplicand and accumulator matrices in `wmma` instructions.  Adds support for `cvt.pack` instruction. |
-| `sm_75` | Adds support for sub-byte integer and single-bit multiplicant matrices in `wmma` instructions.  Adds support for `ldmatrix` instruction.  Adds support for `movmatrix` instruction.  Adds support for `tanh` instruction. |
+| `sm_72` | Adds support for integer multiplicand and accumulator matrices in `wmma` instructions. Adds support for `cvt.pack` instruction. |
+| `sm_75` | Adds support for sub-byte integer and single-bit multiplicant matrices in `wmma` instructions. Adds support for `ldmatrix` instruction. Adds support for `movmatrix` instruction. Adds support for `tanh` instruction. |
 
 | Target | Description |
 | --- | --- |
@@ -149,7 +112,7 @@ to target architecture.
 | Target | Description |
 | --- | --- |
 | `sm_30` | Baseline feature set for `sm_30` architecture. |
-| `sm_32` | Adds 64-bit `{atom,red}.{and,or,xor,min,max}` instructions.  Adds `shf` instruction.  Adds `ld.global.nc` instruction. |
+| `sm_32` | Adds 64-bit `{atom,red}.{and,or,xor,min,max}` instructions. Adds `shf` instruction. Adds `ld.global.nc` instruction. |
 | `sm_35` | Adds support for CUDA Dynamic Parallelism. |
 | `sm_37` | Baseline feature set for `sm_35` architecture. |
 
@@ -159,23 +122,16 @@ to target architecture.
 
 | Target | Description |
 | --- | --- |
-| `sm_10` | Baseline feature set for `sm_10` architecture.  Requires `map_f64_to_f32` if any `.f64` instructions used. |
-| `sm_11` | Adds 64-bit `{atom,red}.{and,or,xor,min,max}` instructions.  Requires `map_f64_to_f32` if any `.f64` instructions used. |
-| `sm_12` | Adds `{atom,red}.shared`, 64-bit `{atom,red}.global`, `vote` instructions.  Requires `map_f64_to_f32` if any `.f64` instructions used. |
-| `sm_13` | Adds double-precision support, including expanded rounding modifiers.  Disallows use of `map_f64_to_f32`. |
+| `sm_10` | Baseline feature set for `sm_10` architecture. Requires `map_f64_to_f32` if any `.f64` instructions used. |
+| `sm_11` | Adds 64-bit `{atom,red}.{and,or,xor,min,max}` instructions. Requires `map_f64_to_f32` if any `.f64` instructions used. |
+| `sm_12` | Adds `{atom,red}.shared`, 64-bit `{atom,red}.global`, `vote` instructions. Requires `map_f64_to_f32` if any `.f64` instructions used. |
+| `sm_13` | Adds double-precision support, including expanded rounding modifiers. Disallows use of `map_f64_to_f32`. |
 
 The texturing mode is specified for an entire module and cannot be changed within the module.
 
-The `.target` debug option declares that the PTX file contains DWARF debug information, and
-subsequent compilation of PTX will retain information needed for source-level debugging. If the
-debug option is declared, an error message is generated if no DWARF information is found in the
-file. The debug option requires PTX ISA version 3.0 or later.
+The `.target` debug option declares that the PTX file contains DWARF debug information, and subsequent compilation of PTX will retain information needed for source-level debugging. If the debug option is declared, an error message is generated if no DWARF information is found in the file. The debug option requires PTX ISA version 3.0 or later.
 
-`map_f64_to_f32` indicates that all double-precision instructions map to single-precision
-regardless of the target architecture. This enables high-level language compilers to compile
-programs containing type double to target device that do not support double-precision
-operations. Note that `.f64` storage remains as 64-bits, with only half being used by instructions
-converted from `.f64` to `.f32`.
+`map_f64_to_f32` indicates that all double-precision instructions map to single-precision regardless of the target architecture. This enables high-level language compilers to compile programs containing type double to target device that do not support double-precision operations. Note that `.f64` storage remains as 64-bits, with only half being used by instructions converted from `.f64` to `.f32`.
 
 Notes
 
@@ -273,14 +229,9 @@ Examples
 
 ```
 .target sm_10       // baseline target architecture
-
 .target sm_13       // supports double-precision
-
 .target sm_20, texmode_independent
-
 .target sm_90       // baseline target architecture
-
 .target sm_90a      // PTX using architecture-specific features
-
 .target sm_100f     // PTX using family-specific features
 ```

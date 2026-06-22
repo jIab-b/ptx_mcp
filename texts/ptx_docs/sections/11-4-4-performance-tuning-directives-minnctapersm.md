@@ -1,4 +1,4 @@
-### 11.4.4. Performance-Tuning Directives: .minnctapersm 
+### 11.4.4. Performance-Tuning Directives: `.minnctapersm`
 
 `.minnctapersm`
 
@@ -12,20 +12,15 @@ Syntax
 
 Description
 
-Declare the minimum number of CTAs from the kernel’s grid to be mapped to a single multiprocessor
-(SM).
+Declare the minimum number of CTAs from the kernelâs grid to be mapped to a single multiprocessor (SM).
 
 Notes
 
-Optimizations based on `.minnctapersm` need either `.maxntid` or `.reqntid` to be specified as
-well.
+Optimizations based on `.minnctapersm` need either `.maxntid` or `.reqntid` to be specified as well.
 
-If the total number of threads on a single SM resulting from `.minnctapersm` and `.maxntid` /
-`.reqntid` exceed maximum number of threads supported by an SM then directive `.minnctapersm`
-will be ignored.
+If the total number of threads on a single SM resulting from `.minnctapersm` and `.maxntid` / `.reqntid` exceed maximum number of threads supported by an SM then directive `.minnctapersm` will be ignored.
 
-In PTX ISA version 2.1 or higher, a warning is generated if `.minnctapersm` is specified without
-specifying either `.maxntid` or `.reqntid`.
+In PTX ISA version 2.1 or higher, a warning is generated if `.minnctapersm` is specified without specifying either `.maxntid` or `.reqntid`.
 
 PTX ISA Notes
 

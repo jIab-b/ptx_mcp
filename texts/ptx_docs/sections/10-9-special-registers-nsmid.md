@@ -1,4 +1,4 @@
-## 10.9. Special Registers: %nsmid 
+## 10.9. Special Registers: `%nsmid`
 
 `%nsmid`
 
@@ -12,9 +12,7 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register that returns the maximum number of SM identifiers. The SM
-identifier numbering is not guaranteed to be contiguous, so `%nsmid` may be larger than the
-physical number of SMs in the device.
+A predefined, read-only special register that returns the maximum number of SM identifiers. The SM identifier numbering is not guaranteed to be contiguous, so `%nsmid` may be larger than the physical number of SMs in the device.
 
 PTX ISA Notes
 

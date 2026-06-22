@@ -1,4 +1,4 @@
-#### 9.7.1.3. Integer Arithmetic Instructions: mul 
+#### 9.7.1.3. Integer Arithmetic Instructions: `mul`
 
 `mul`
 
@@ -9,12 +9,8 @@ Syntax
 ```
 mul.mode.type  d, a, b;
 
-
-
 .mode = { .hi, .lo, .wide };
-
 .type = { .u16, .u32, .u64,
-
           .s16, .s32, .s64 };
 ```
 
@@ -26,22 +22,15 @@ Semantics
 
 ```
 t = a * b;
-
 n = bitwidth of type;
-
 d = t;            // for .wide
-
 d = t<2n-1..n>;   // for .hi variant
-
 d = t<n-1..0>;    // for .lo variant
 ```
 
 Notes
 
-The type of the operation represents the types of the `a` and `b` operands. If `.hi` or
-`.lo` is specified, then `d` is the same size as `a` and `b`, and either the upper or lower
-half of the result is written to the destination register. If `.wide` is specified, then `d` is
-twice as wide as `a` and `b` to receive the full result of the multiplication.
+The type of the operation represents the types of the `a` and `b` operands. If `.hi` or `.lo` is specified, then `d` is the same size as `a` and `b`, and either the upper or lower half of the result is written to the destination register. If `.wide` is specified, then `d` is twice as wide as `a` and `b` to receive the full result of the multiplication.
 
 The `.wide` suffix is supported only for 16- and 32-bit integer types.
 
@@ -57,8 +46,6 @@ Examples
 
 ```
 mul.wide.s16 fa,fxs,fys;   // 16*16 bits yields 32 bits
-
 mul.lo.s16 fa,fxs,fys;     // 16*16 bits, save only the low 16 bits
-
 mul.wide.s32 z,x,y;        // 32*32 bits, creates 64 bit result
 ```

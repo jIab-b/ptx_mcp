@@ -1,8 +1,8 @@
-## 10.20. Special Registers: %lanemask_lt 
+## 10.20. Special Registers: `%lanemask_lt`
 
 `%lanemask_lt`
 
-32-bit mask with bits set in positions less than the thread’s lane number in the warp.
+32-bit mask with bits set in positions less than the threadâs lane number in the warp.
 
 Syntax (predefined)
 
@@ -12,8 +12,7 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register initialized with a 32-bit mask with bits set in positions
-less than the thread’s lane number in the warp.
+A predefined, read-only special register initialized with a 32-bit mask with bits set in positions less than the threadâs lane number in the warp.
 
 PTX ISA Notes
 

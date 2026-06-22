@@ -1,4 +1,4 @@
-#### 9.7.3.21. Floating Point Instructions: ex2 
+#### 9.7.3.21. Floating Point Instructions: `ex2`
 
 `ex2`
 
@@ -32,23 +32,23 @@ Notes
 | +Inf | +Inf |
 | NaN | NaN |
 
-The maximum ulp error is 2 ulp from correctly rounded result across the
-full range of inputs.
+The maximum ulp error is 2 ulp from correctly rounded result across the full range of inputs.
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `ex2.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   Subnormal inputs and results to sign-preserving zero.
+`ex2.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+
+**`sm_1x`**
+
+Subnormal inputs and results to sign-preserving zero.
 
 PTX ISA Notes
 
-`ex2.f32` introduced in PTX ISA version 1.0. Explicit modifiers `.approx` and `.ftz`
-introduced in PTX ISA version 1.4.
+`ex2.f32` introduced in PTX ISA version 1.0. Explicit modifiers `.approx` and `.ftz` introduced in PTX ISA version 1.4.
 
 For PTX ISA version 1.4 and later, the `.approx` modifier is required.
 

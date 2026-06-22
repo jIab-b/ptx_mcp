@@ -1,4 +1,4 @@
-## 10.12. Special Registers: %clusterid 
+## 10.12. Special Registers: `%clusterid`
 
 `%clusterid`
 
@@ -8,25 +8,20 @@ Syntax (predefined)
 
 ```
 .sreg .v4 .u32 %clusterid;
-
 .sreg .u32 %clusterid.x, %clusterid.y, %clusterid.z;
 ```
 
 Description
 
-A predefined, read-only special register initialized with the cluster identifier in a grid in each
-dimension. Each cluster in a grid has a unique identifier.
+A predefined, read-only special register initialized with the cluster identifier in a grid in each dimension. Each cluster in a grid has a unique identifier.
 
-The `%clusterid` special register contains a 1D, 2D, or 3D vector, depending upon the shape and
-rank of the cluster. The fourth element is unused and always returns zero.
+The `%clusterid` special register contains a 1D, 2D, or 3D vector, depending upon the shape and rank of the cluster. The fourth element is unused and always returns zero.
 
 It is guaranteed that:
 
 ```
 0  <=  %clusterid.x <  %nclusterid.x
-
 0  <=  %clusterid.y <  %nclusterid.y
-
 0  <=  %clusterid.z <  %nclusterid.z
 ```
 
@@ -42,14 +37,9 @@ Examples
 
 ```
 .reg .b32 %r<2>;
-
 .reg .v4 .b32 %rx;
 
-
-
 mov.u32     %r0, %clusterid.x;
-
 mov.u32     %r1, %clusterid.z;
-
 mov.v4.u32  %rx, %clusterid;
 ```

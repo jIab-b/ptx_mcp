@@ -1,16 +1,8 @@
-### 4.3.1. Directive Statements 
+### 4.3.1. Directive Statements
 
-Directive keywords begin with a dot, so no conflict is possible with user-defined identifiers. The
-directives in PTX are listed in [Table 1](#directive-statements-ptx-directives) and
-described in [State Spaces, Types, and Variables](#state-spaces-types-and-variables)
-and [Directives](#directives).
+Directive keywords begin with a dot, so no conflict is possible with user-defined identifiers. The directives in PTX are listed in [Table 1](#directive-statements-ptx-directives) and described in [State Spaces, Types, and Variables](#state-spaces-types-and-variables) and [Directives](#directives).
 
-Table 1 PTX Directives[](#directive-statements-ptx-directives "Permalink to this table")
-
-
-
-
-
+**Table 1 PTX Directives**
 
 |  |  |  |  |
 | --- | --- | --- | --- |

@@ -1,4 +1,4 @@
-#### 9.7.3.20. Floating Point Instructions: lg2 
+#### 9.7.3.20. Floating Point Instructions: `lg2`
 
 `lg2`
 
@@ -33,24 +33,23 @@ Notes
 | +Inf | +Inf |
 | NaN | NaN |
 
-The maximum absolute error is 2-22 when the input operand is in the
-range (0.5, 2). For positive finite inputs outside of this interval, maximum
-relative error is 2-22.
+The maximum absolute error is 2-22 when the input operand is in the range (0.5, 2). For positive finite inputs outside of this interval, maximum relative error is 2-22.
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `lg2.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   Subnormal inputs and results to sign-preserving zero.
+`lg2.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+
+**`sm_1x`**
+
+Subnormal inputs and results to sign-preserving zero.
 
 PTX ISA Notes
 
-`lg2.f32` introduced in PTX ISA version 1.0. Explicit modifiers `.approx` and `.ftz`
-introduced in PTX ISA version 1.4.
+`lg2.f32` introduced in PTX ISA version 1.0. Explicit modifiers `.approx` and `.ftz` introduced in PTX ISA version 1.4.
 
 For PTX ISA version 1.4 and later, the `.approx` modifier is required.
 

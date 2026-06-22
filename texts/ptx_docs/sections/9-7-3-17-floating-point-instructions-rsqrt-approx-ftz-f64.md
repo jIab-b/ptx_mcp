@@ -1,4 +1,4 @@
-#### 9.7.3.17. Floating Point Instructions: rsqrt.approx.ftz.f64 
+#### 9.7.3.17. Floating Point Instructions: `rsqrt.approx.ftz.f64`
 
 `rsqrt.approx.ftz.f64`
 
@@ -12,16 +12,13 @@ rsqrt.approx.ftz.f64 d, a;
 
 Description
 
-Compute a double-precision (`.f64`) approximation of the square root reciprocal of a value. The
-least significant 32 bits of the double-precision (`.f64`) destination `d` are all zeros.
+Compute a double-precision (`.f64`) approximation of the square root reciprocal of a value. The least significant 32 bits of the double-precision (`.f64`) destination `d` are all zeros.
 
 Semantics
 
 ```
 tmp = a[63:32]; // upper word of a, 1.11.20 format
-
 d[63:32] = 1.0 / sqrt(tmp);
-
 d[31:0] = 0x00000000;
 ```
 

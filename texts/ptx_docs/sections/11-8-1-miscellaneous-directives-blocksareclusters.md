@@ -1,4 +1,4 @@
-### 11.8.1. Miscellaneous Directives: .blocksareclusters 
+### 11.8.1. Miscellaneous Directives: `.blocksareclusters`
 
 `.blocksareclusters`
 
@@ -12,17 +12,11 @@ Syntax
 
 Description
 
-Default behavior of CUDA API is to specify the grid launch configuration by specifying the number of
-thread blocks and the number of threads per block.
+Default behavior of CUDA API is to specify the grid launch configuration by specifying the number of thread blocks and the number of threads per block.
 
-When `.blocksareclusters` directive is specified, it implies that the grid launch configuration
-for the corresponding `.entry` function is specifying the number of clusters, i.e. the launch
-configuration is specifying number of clusters instead of the number of thread blocks. In this case,
-the number of thread blocks per cluster is specified by `.reqnctapercluster` directive and the
-thread block size is specified with the `.reqntid` directive.
+When `.blocksareclusters` directive is specified, it implies that the grid launch configuration for the corresponding `.entry` function is specifying the number of clusters, i.e. the launch configuration is specifying number of clusters instead of the number of thread blocks. In this case, the number of thread blocks per cluster is specified by `.reqnctapercluster` directive and the thread block size is specified with the `.reqntid` directive.
 
-`.blocksareclusters` directive is only allowed for `.entry` functions and also needs
-`.reqntid` and `.reqnctapercluster` directives to be specified.
+`.blocksareclusters` directive is only allowed for `.entry` functions and also needs `.reqntid` and `.reqnctapercluster` directives to be specified.
 
 Refer to *CUDA Programming Guide* for more details.
 

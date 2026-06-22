@@ -1,4 +1,4 @@
-### 11.4.5. Performance-Tuning Directives: .maxnctapersm (deprecated) 
+### 11.4.5. Performance-Tuning Directives: `.maxnctapersm` (deprecated)
 
 `.maxnctapersm`
 
@@ -12,17 +12,11 @@ Syntax
 
 Description
 
-Declare the maximum number of CTAs from the kernel’s grid that may be mapped to a single
-multiprocessor (SM).
+Declare the maximum number of CTAs from the kernelâs grid that may be mapped to a single multiprocessor (SM).
 
 Notes
 
-Optimizations based on .maxnctapersm generally need `.maxntid` to be specified as well. The
-optimizing backend compiler uses `.maxntid` and `.maxnctapersm` to compute an upper-bound on
-per-thread register usage so that the specified number of CTAs can be mapped to a single
-multiprocessor. However, if the number of registers used by the backend is sufficiently lower than
-this bound, additional CTAs may be mapped to a single multiprocessor. For this reason,
-`.maxnctapersm` has been renamed to .minnctapersm in PTX ISA version 2.0.
+Optimizations based on .maxnctapersm generally need `.maxntid` to be specified as well. The optimizing backend compiler uses `.maxntid` and `.maxnctapersm` to compute an upper-bound on per-thread register usage so that the specified number of CTAs can be mapped to a single multiprocessor. However, if the number of registers used by the backend is sufficiently lower than this bound, additional CTAs may be mapped to a single multiprocessor. For this reason, `.maxnctapersm` has been renamed to .minnctapersm in PTX ISA version 2.0.
 
 PTX ISA Notes
 

@@ -1,4 +1,4 @@
-#### 9.7.3.16. Floating Point Instructions: rsqrt 
+#### 9.7.3.16. Floating Point Instructions: `rsqrt`
 
 `rsqrt`
 
@@ -8,7 +8,6 @@ Syntax
 
 ```
 rsqrt.approx{.ftz}.f32  d, a;
-
 rsqrt.approx.f64        d, a;
 ```
 
@@ -35,32 +34,31 @@ Notes
 | +Inf | +0.0 |
 | NaN | NaN |
 
-The maximum relative error for `rsqrt.f32` over the entire positive
-finite floating-point range is 2-22.9.
+The maximum relative error for `rsqrt.f32` over the entire positive finite floating-point range is 2-22.9.
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `rsqrt.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   `rsqrt.f64` supports subnormal numbers.
+`rsqrt.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
 
-    `rsqrt.f32` flushes subnormal inputs and results to sign-preserving zero.
+**`sm_1x`**
+
+`rsqrt.f64` supports subnormal numbers.
+
+`rsqrt.f32` flushes subnormal inputs and results to sign-preserving zero.
 
 Note that `rsqrt.approx.f64` is emulated in software and are relatively slow.
 
 PTX ISA Notes
 
-`rsqrt.f32` and `rsqrt.f64` were introduced in PTX ISA version 1.0. Explicit modifiers
-`.approx` and `.ftz` were introduced in PTX ISA version 1.4.
+`rsqrt.f32` and `rsqrt.f64` were introduced in PTX ISA version 1.0. Explicit modifiers `.approx` and `.ftz` were introduced in PTX ISA version 1.4.
 
 For PTX ISA version 1.4 and later, the `.approx` modifier is required.
 
-For PTX ISA versions 1.0 through 1.3, `rsqrt.f32` defaults to `rsqrt.approx.ftz.f32`, and
-`rsqrt.f64` defaults to `rsqrt.approx.f64`.
+For PTX ISA versions 1.0 through 1.3, `rsqrt.f32` defaults to `rsqrt.approx.ftz.f32`, and `rsqrt.f64` defaults to `rsqrt.approx.f64`.
 
 Target ISA Notes
 
@@ -72,6 +70,5 @@ Examples
 
 ```
 rsqrt.approx.ftz.f32  isr, x;
-
 rsqrt.approx.f64      ISR, X;
 ```

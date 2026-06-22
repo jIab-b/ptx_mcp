@@ -1,4 +1,4 @@
-### 11.7.3. Cluster Dimension Directives: .maxclusterrank 
+### 11.7.3. Cluster Dimension Directives: `.maxclusterrank`
 
 `.maxclusterrank`
 
@@ -16,9 +16,7 @@ Declare the maximum number of thread blocks (CTAs) allowed to be part of the clu
 
 Semantics
 
-Product of the number of CTAs in each cluster dimension specified in any invocation of the kernel is
-required to be less or equal to that specified in this directive. Otherwise invocation will result
-in a runtime error or kernel launch failure.
+Product of the number of CTAs in each cluster dimension specified in any invocation of the kernel is required to be less or equal to that specified in this directive. Otherwise invocation will result in a runtime error or kernel launch failure.
 
 The `.maxclusterrank` directive cannot be used in conjunction with the `.reqnctapercluster` directive.
 

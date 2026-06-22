@@ -1,4 +1,4 @@
-## 10.16. Special Registers: %cluster_ctarank 
+## 10.16. Special Registers: `%cluster_ctarank`
 
 `%cluster_ctarank`
 
@@ -12,8 +12,7 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register initialized with the CTA rank within a cluster across all
-dimensions.
+A predefined, read-only special register initialized with the CTA rank within a cluster across all dimensions.
 
 It is guaranteed that:
 
@@ -33,8 +32,6 @@ Examples
 
 ```
 .reg .b32 %r;
-
-
 
 mov.u32  %r, %cluster_ctarank;
 ```

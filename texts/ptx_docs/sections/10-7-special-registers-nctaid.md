@@ -1,4 +1,4 @@
-## 10.7. Special Registers: %nctaid 
+## 10.7. Special Registers: `%nctaid`
 
 `%nctaid`
 
@@ -8,15 +8,12 @@ Syntax (predefined)
 
 ```
 .sreg .v4 .u32 %nctaid                      // Grid shape vector
-
 .sreg .u32 %nctaid.x,%nctaid.y,%nctaid.z;   // Grid dimensions
 ```
 
 Description
 
-A predefined, read-only special register initialized with the number of CTAs in each grid
-dimension. The `%nctaid` special register contains a 3D grid shape vector, with each element
-having a value of at least `1`. The fourth element is unused and always returns zero.
+A predefined, read-only special register initialized with the number of CTAs in each grid dimension. The `%nctaid` special register contains a 3D grid shape vector, with each element having a value of at least `1`. The fourth element is unused and always returns zero.
 
 Maximum values of %nctaid.{x,y,z} are as follows:
 
@@ -29,9 +26,7 @@ PTX ISA Notes
 
 Introduced in PTX ISA version 1.0 with type `.v4.u16`.
 
-Redefined as type `.v4.u32` in PTX ISA version 2.0. For compatibility with legacy PTX code, 16-bit
-`mov` and `cvt` instructions may be used to read the lower 16-bits of each component of
-`%nctaid`.
+Redefined as type `.v4.u32` in PTX ISA version 2.0. For compatibility with legacy PTX code, 16-bit `mov` and `cvt` instructions may be used to read the lower 16-bits of each component of `%nctaid`.
 
 Target ISA Notes
 
@@ -41,6 +36,5 @@ Examples
 
 ```
 mov.u32  %r0,%nctaid.x;
-
 mov.u16  %rh,%nctaid.x;     // legacy code
 ```

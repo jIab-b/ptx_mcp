@@ -1,4 +1,4 @@
-## 10.11. Special Registers: %is_explicit_cluster 
+## 10.11. Special Registers: `%is_explicit_cluster`
 
 `%is_explicit_cluster`
 
@@ -12,8 +12,7 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register initialized with the predicate value of whether the cluster
-launch is explicitly specified by user.
+A predefined, read-only special register initialized with the predicate value of whether the cluster launch is explicitly specified by user.
 
 PTX ISA Notes
 
@@ -27,8 +26,6 @@ Examples
 
 ```
 .reg .pred p;
-
-
 
 mov.pred  p, %is_explicit_cluster;
 ```

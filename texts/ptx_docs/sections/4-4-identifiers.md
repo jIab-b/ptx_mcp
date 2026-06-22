@@ -1,32 +1,19 @@
-## 4.4. Identifiers 
+## 4.4. Identifiers
 
-User-defined identifiers follow extended C++ rules: they either start with a letter followed by zero
-or more letters, digits, underscore, or dollar characters; or they start with an underscore, dollar,
-or percentage character followed by one or more letters, digits, underscore, or dollar characters:
+User-defined identifiers follow extended C++ rules: they either start with a letter followed by zero or more letters, digits, underscore, or dollar characters; or they start with an underscore, dollar, or percentage character followed by one or more letters, digits, underscore, or dollar characters:
 
 ```
 followsym:   [a-zA-Z0-9_$]
-
 identifier:  [a-zA-Z]{followsym}* | {[_$%]{followsym}+
 ```
 
-PTX does not specify a maximum length for identifiers and suggests that all implementations support
-a minimum length of at least 1024 characters.
+PTX does not specify a maximum length for identifiers and suggests that all implementations support a minimum length of at least 1024 characters.
 
-Many high-level languages such as C and C++ follow similar rules for identifier names, except that
-the percentage sign is not allowed. PTX allows the percentage sign as the first character of an
-identifier. The percentage sign can be used to avoid name conflicts, e.g., between user-defined
-variable names and compiler-generated names.
+Many high-level languages such as C and C++ follow similar rules for identifier names, except that the percentage sign is not allowed. PTX allows the percentage sign as the first character of an identifier. The percentage sign can be used to avoid name conflicts, e.g., between user-defined variable names and compiler-generated names.
 
-PTX predefines one constant and a small number of special registers that begin with the percentage
-sign, listed in [Table 3](#identifiers-predefined-identifiers).
+PTX predefines one constant and a small number of special registers that begin with the percentage sign, listed in [Table 3](#identifiers-predefined-identifiers).
 
-Table 3 Predefined Identifiers[](#identifiers-predefined-identifiers "Permalink to this table")
-
-
-
-
-
+**Table 3 Predefined Identifiers**
 
 |  |  |  |  |
 | --- | --- | --- | --- |

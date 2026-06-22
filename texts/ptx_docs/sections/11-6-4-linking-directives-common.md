@@ -1,4 +1,4 @@
-### 11.6.4. Linking Directives: .common 
+### 11.6.4. Linking Directives: `.common`
 
 `.common`
 
@@ -12,17 +12,13 @@ Syntax
 
 Description
 
-Declares identifier to be globally visible but “common”.
+Declares identifier to be globally visible but âcommonâ.
 
-Common symbols are similar to globally visible symbols. However multiple object files may declare
-the same common symbol and they may have different types and sizes and references to a symbol get
-resolved against a common symbol with the largest size.
+Common symbols are similar to globally visible symbols. However multiple object files may declare the same common symbol and they may have different types and sizes and references to a symbol get resolved against a common symbol with the largest size.
 
-Only one object file can initialize a common symbol and that must have the largest size among all
-other definitions of that common symbol from different object files.
+Only one object file can initialize a common symbol and that must have the largest size among all other definitions of that common symbol from different object files.
 
-`.common` linking directive can be used only on variables with `.global` storage. It cannot be
-used on function symbols or on symbols with opaque type.
+`.common` linking directive can be used only on variables with `.global` storage. It cannot be used on function symbols or on symbols with opaque type.
 
 PTX ISA Notes
 

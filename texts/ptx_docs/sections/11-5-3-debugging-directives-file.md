@@ -1,4 +1,4 @@
-### 11.5.3. Debugging Directives: .file 
+### 11.5.3. Debugging Directives: `.file`
 
 `.file`
 
@@ -12,19 +12,15 @@ Syntax
 
 Description
 
-Associates a source filename with an integer index. `.loc` directives reference source files by
-index.
+Associates a source filename with an integer index. `.loc` directives reference source files by index.
 
-`.file` directive allows optionally specifying an unsigned number representing time of last
-modification and an unsigned integer representing size in bytes of source file. `timestamp` and
-`file_size` value can be 0 to indicate this information is not available.
+`.file` directive allows optionally specifying an unsigned number representing time of last modification and an unsigned integer representing size in bytes of source file. `timestamp` and `file_size` value can be 0 to indicate this information is not available.
 
 `timestamp` value is in format of C and C++ data type `time_t`.
 
 `file_size` is an unsigned 64-bit integer.
 
-The `.file` directive is allowed only in the outermost scope, i.e., at the same level as kernel
-and device function declarations.
+The `.file` directive is allowed only in the outermost scope, i.e., at the same level as kernel and device function declarations.
 
 Semantics
 
@@ -44,8 +40,6 @@ Examples
 
 ```
 .file 1 "example.cu"
-
 .file 2 "kernel.cu"
-
 .file 1 "kernel.cu", 1339013327, 64118
 ```

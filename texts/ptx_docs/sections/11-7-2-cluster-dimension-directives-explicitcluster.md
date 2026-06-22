@@ -1,4 +1,4 @@
-### 11.7.2. Cluster Dimension Directives: .explicitcluster 
+### 11.7.2. Cluster Dimension Directives: `.explicitcluster`
 
 `.explicitcluster`
 
@@ -16,9 +16,7 @@ Declares that this Kernel should be launched with cluster dimension explicitly s
 
 Semantics
 
-Kernels with `.explicitcluster` directive must be launched with cluster dimension explicitly
-specified (either at launch time or via `.reqnctapercluster`), otherwise program will fail with
-runtime error or kernel launch failure.
+Kernels with `.explicitcluster` directive must be launched with cluster dimension explicitly specified (either at launch time or via `.reqnctapercluster`), otherwise program will fail with runtime error or kernel launch failure.
 
 PTX ISA Notes
 

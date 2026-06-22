@@ -1,4 +1,4 @@
-### 11.6.2. Linking Directives: .visible 
+### 11.6.2. Linking Directives: `.visible`
 
 `.visible`
 
@@ -12,9 +12,7 @@ Syntax
 
 Description
 
-Declares identifier to be globally visible. Unlike C, where identifiers are globally visible unless
-declared static, PTX identifiers are visible only within the current module unless declared
-`.visible` outside the current.
+Declares identifier to be globally visible. Unlike C, where identifiers are globally visible unless declared static, PTX identifiers are visible only within the current module unless declared `.visible` outside the current.
 
 PTX ISA Notes
 

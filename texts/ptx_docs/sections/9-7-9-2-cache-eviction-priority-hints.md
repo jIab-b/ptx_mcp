@@ -1,16 +1,10 @@
-#### 9.7.9.2. Cache Eviction Priority Hints 
+#### 9.7.9.2. Cache Eviction Priority Hints
 
-PTX ISA version 7.4 adds optional cache eviction priority hints on load and store
-instructions. Cache eviction priority requires target architecture `sm_70` or higher.
+PTX ISA version 7.4 adds optional cache eviction priority hints on load and store instructions. Cache eviction priority requires target architecture `sm_70` or higher.
 
-Cache eviction priority on load or store instructions is treated as a performance hint. It is
-supported for `.global` state space and generic addresses where the address points to `.global`
-state space.
+Cache eviction priority on load or store instructions is treated as a performance hint. It is supported for `.global` state space and generic addresses where the address points to `.global` state space.
 
-Table 32 Cache Eviction Priority Hints for Memory Load and Store Instructions[](#id677 "Permalink to this table")
-
-
-
+**Table 32 Cache Eviction Priority Hints for Memory Load and Store Instructions**
 
 | Cache Eviction Priority | Meaning |
 | --- | --- |

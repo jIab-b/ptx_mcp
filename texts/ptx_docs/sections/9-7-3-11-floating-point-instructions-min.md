@@ -1,4 +1,4 @@
-#### 9.7.3.11. Floating Point Instructions: min 
+#### 9.7.3.11. Floating Point Instructions: `min`
 
 `min`
 
@@ -8,9 +8,7 @@ Syntax
 
 ```
 min{.ftz}{.NaN}{.xorsign.abs}.f32  d, a, b;
-
 min{.ftz}{.NaN}{.abs}.f32          d, a, b, c;
-
 min.f64                            d, a, b;
 ```
 
@@ -18,18 +16,13 @@ Description
 
 Store the minimum of `a`, `b` and optionally `c` in `d`.
 
-If `.NaN` modifier is specified, then the result is canonical `NaN` if any of the inputs is
-`NaN`.
+If `.NaN` modifier is specified, then the result is canonical `NaN` if any of the inputs is `NaN`.
 
-If `.abs` modifier is specified, the magnitude of destination operand `d` is the minimum of
-absolute values of both input arguments.
+If `.abs` modifier is specified, the magnitude of destination operand `d` is the minimum of absolute values of both input arguments.
 
-If `.xorsign` modifier is specified, the sign bit of destination `d` is equal to the XOR of the
-sign bits of both inputs `a` and `b`. The `.xorsign` qualifier cannot be specified for three
-inputs operation.
+If `.xorsign` modifier is specified, the sign bit of destination `d` is equal to the XOR of the sign bits of both inputs `a` and `b`. The `.xorsign` qualifier cannot be specified for three inputs operation.
 
-Qualifier `.xorsign` requires qualifier `.abs` to be specified. In such cases, `.xorsign`
-considers the sign bit of both inputs before applying `.abs` operation.
+Qualifier `.xorsign` requires qualifier `.abs` to be specified. In such cases, `.xorsign` considers the sign bit of both inputs before applying `.abs` operation.
 
 If the result of `min` is `NaN` then the `.xorsign` and `.abs` modifiers will be ignored.
 
@@ -37,99 +30,52 @@ Semantics
 
 ```
 def min_num (z, x, y) {
-
     if (isNaN(x) && isNaN(y))
-
         z = NaN;
-
     else if (isNaN(x))
-
         z = y;
-
     else if (isNaN(y))
-
         z = x;
-
     else
-
         // note: -0.0 < +0.0 here
-
         z = (x < y) ? x : y;
-
     return z;
-
 }
-
-
 
 def min_nan (z, x, y) {
-
     if (isNaN(x) || isNaN(y))
-
         z = NaN;
-
     else
-
         // note: -0.0 < +0.0 here
-
         z = (x < y) ? x : y;
-
     return z;
-
 }
-
-
 
 def two_inputs_min (z, x, y) {
-
     if (.NaN)
-
         z = min_nan(z, x, y);
-
     else
-
         z = min_num(z, x, y);
-
     return z;
-
 }
-
-
 
 if (.xorsign && !isPresent(c)) {
-
     xorsign = getSignBit(a) ^ getSignBit(b);
-
 }
-
 if (.abs) {
-
     a = |a|;
-
     b = |b|;
-
     if (isPresent(c)) {
-
         c = |c|;
-
     }
-
 }
-
-
 
 d = two_inputs_min(d, a, b)
-
 if (isPresent(c)) {
-
     d = two_inputs_min(d, d, c)
-
 }
-
 if (.xorsign && !isPresent(c) && !isNaN(d)) {
-
     setSignBit(d, xorsign);
-
 }
 ```
 
@@ -137,15 +83,17 @@ Notes
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `min.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   `min.f64` supports subnormal numbers.
+`min.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
 
-    `min.f32` flushes subnormal inputs and results to sign-preserving zero.
+**`sm_1x`**
+
+`min.f64` supports subnormal numbers.
+
+`min.f32` flushes subnormal inputs and results to sign-preserving zero.
 
 If values of both inputs are 0.0, then +0.0 > -0.0.
 
@@ -175,14 +123,9 @@ Examples
 
 ```
 @p  min.ftz.f32  z,z,x;
-
     min.f64      a,b,c;
-
     // fp32 min with .NaN
-
     min.NaN.f32  f0,f1,f2;
-
     // fp32 min with .xorsign.abs
-
     min.xorsign.abs.f32 Rd, Ra, Rb;
 ```

@@ -12,7 +12,7 @@ HANDLERS = {"search_ptx": lambda a: search_ptx(a["query"], a.get("max_results", 
 class MCPServer:
     def handle_request(self, req: dict) -> dict:
         m, i, p = req.get("method", ""), req.get("id"), req.get("params", {})
-        if m == "initialize": return {"jsonrpc": "2.0", "id": i, "result": {"protocolVersion": "2024-11-05", "capabilities": {"tools": {}}, "serverInfo": {"name": "ptx-docs", "version": "0.5.0"}}}
+        if m == "initialize": return {"jsonrpc": "2.0", "id": i, "result": {"protocolVersion": "2024-11-05", "capabilities": {"tools": {}}, "serverInfo": {"name": "ptx-docs", "version": "0.6.0"}}}
         if m == "tools/list": return {"jsonrpc": "2.0", "id": i, "result": {"tools": TOOLS}}
         if m == "tools/call":
             n, a = p.get("name"), p.get("arguments", {})

@@ -1,4 +1,4 @@
-#### 9.7.8.2. Logic and Shift Instructions: or 
+#### 9.7.8.2. Logic and Shift Instructions: `or`
 
 `or`
 
@@ -8,8 +8,6 @@ Syntax
 
 ```
 or.type d, a, b;
-
-
 
 .type = { .pred, .b16, .b32, .b64 };
 ```
@@ -42,6 +40,5 @@ Examples
 
 ```
 or.b32  mask mask,0x00010001
-
 or.pred  p,q,r;
 ```

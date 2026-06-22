@@ -1,4 +1,4 @@
-#### 9.7.8.8. Logic and Shift Instructions: shl 
+#### 9.7.8.8. Logic and Shift Instructions: `shl`
 
 `shl`
 
@@ -8,8 +8,6 @@ Syntax
 
 ```
 shl.type d, a, b;
-
-
 
 .type = { .b16, .b32, .b64 };
 ```
@@ -28,8 +26,7 @@ Notes
 
 Shift amounts greater than the register width *N* are clamped to *N*.
 
-The sizes of the destination and first source operand must match, but not necessarily the type. The
-`b` operand must be a 32-bit value, regardless of the instruction type.
+The sizes of the destination and first source operand must match, but not necessarily the type. The `b` operand must be a 32-bit value, regardless of the instruction type.
 
 PTX ISA Notes
 

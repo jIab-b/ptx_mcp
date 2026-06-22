@@ -1,14 +1,8 @@
-### 6.5.2. Rounding Modifiers 
+### 6.5.2. Rounding Modifiers
 
-Conversion instructions may specify a rounding modifier. In PTX, there are four integer rounding
-modifiers and six floating-point rounding
-modifiers. [Table 17](#rounding-modifiers-floating-point-rounding-modifiers) and
-[Table 18](#rounding-modifiers-integer-rounding-modifiers) summarize the rounding modifiers.
+Conversion instructions may specify a rounding modifier. In PTX, there are four integer rounding modifiers and six floating-point rounding modifiers. [Table 17](#rounding-modifiers-floating-point-rounding-modifiers) and [Table 18](#rounding-modifiers-integer-rounding-modifiers) summarize the rounding modifiers.
 
-Table 17 Floating-Point Rounding Modifiers[](#rounding-modifiers-floating-point-rounding-modifiers "Permalink to this table")
-
-
-
+**Table 17 Floating-Point Rounding Modifiers**
 
 | Modifier | Description |
 | --- | --- |
@@ -19,10 +13,7 @@ Table 17 Floating-Point Rounding Modifiers[](#rounding-modifiers-floating-poi
 | `.rp` | rounds towards positive infinity |
 | `.rs` | rounds either towards zero or away from zero based on the carry out of the integer addition of random bits and the discarded bits of mantissa |
 
-Table 18 Integer Rounding Modifiers[](#rounding-modifiers-integer-rounding-modifiers "Permalink to this table")
-
-
-
+**Table 18 Integer Rounding Modifiers**
 
 | Modifier | Description |
 | --- | --- |

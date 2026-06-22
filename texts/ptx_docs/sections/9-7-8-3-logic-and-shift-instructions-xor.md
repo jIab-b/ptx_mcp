@@ -1,4 +1,4 @@
-#### 9.7.8.3. Logic and Shift Instructions: xor 
+#### 9.7.8.3. Logic and Shift Instructions: `xor`
 
 `xor`
 
@@ -8,8 +8,6 @@ Syntax
 
 ```
 xor.type d, a, b;
-
-
 
 .type = { .pred, .b16, .b32, .b64 };
 ```
@@ -42,6 +40,5 @@ Examples
 
 ```
 xor.b32  d,q,r;
-
 xor.b16  d,x,0x0001;
 ```

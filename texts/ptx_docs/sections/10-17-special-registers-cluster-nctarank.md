@@ -1,4 +1,4 @@
-## 10.17. Special Registers: %cluster_nctarank 
+## 10.17. Special Registers: `%cluster_nctarank`
 
 `%cluster_nctarank`
 
@@ -12,8 +12,7 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register initialized with the nunber of CTAs within a cluster across
-all dimensions.
+A predefined, read-only special register initialized with the nunber of CTAs within a cluster across all dimensions.
 
 PTX ISA Notes
 
@@ -27,8 +26,6 @@ Examples
 
 ```
 .reg .b32 %r;
-
-
 
 mov.u32  %r, %cluster_nctarank;
 ```

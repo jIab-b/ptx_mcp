@@ -1,4 +1,3 @@
-### 8.10.1. Coherence 
+### 8.10.1. Coherence
 
-If a write W precedes an *overlapping* write W’ in *causality order*, then W must precede W’ in
-*coherence order*.
+If a write W precedes an *overlapping* write Wâ in *causality order*, then W must precede Wâ in *coherence order*.

@@ -1,4 +1,4 @@
-## 10.15. Special Registers: %cluster_nctaid 
+## 10.15. Special Registers: `%cluster_nctaid`
 
 `%cluster_nctaid`
 
@@ -8,20 +8,16 @@ Syntax (predefined)
 
 ```
 .sreg .v4 .u32 %cluster_nctaid;
-
 .sreg .u32 %cluster_nctaid.x, %cluster_nctaid.y, %cluster_nctaid.z;
 ```
 
 Description
 
-A predefined, read-only special register initialized with the number of CTAs in a cluster in each
-dimension.
+A predefined, read-only special register initialized with the number of CTAs in a cluster in each dimension.
 
-The `%cluster_nctaid` special register contains a 3D grid shape vector that holds the cluster
-dimensions in terms of CTAs. The fourth element is unused and always returns zero.
+The `%cluster_nctaid` special register contains a 3D grid shape vector that holds the cluster dimensions in terms of CTAs. The fourth element is unused and always returns zero.
 
-Refer to the *Cuda Programming Guide* for details on the maximum values of
-`%cluster_nctaid.{x,y,z}`.
+Refer to the *Cuda Programming Guide* for details on the maximum values of `%cluster_nctaid.{x,y,z}`.
 
 PTX ISA Notes
 
@@ -35,14 +31,9 @@ Examples
 
 ```
 .reg .b32 %r<2>;
-
 .reg .v4 .b32 %rx;
 
-
-
 mov.u32     %r0, %cluster_nctaid.x;
-
 mov.u32     %r1, %cluster_nctaid.z;
-
 mov.v4.u32  %rx, %cluster_nctaid;
 ```

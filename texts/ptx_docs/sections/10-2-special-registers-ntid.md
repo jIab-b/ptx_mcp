@@ -1,4 +1,4 @@
-## 10.2. Special Registers: %ntid 
+## 10.2. Special Registers: `%ntid`
 
 `%ntid`
 
@@ -8,20 +8,15 @@ Syntax (predefined)
 
 ```
 .sreg .v4 .u32 %ntid;                   // CTA shape vector
-
 .sreg .u32 %ntid.x, %ntid.y, %ntid.z;   // CTA dimensions
 ```
 
 Description
 
-A predefined, read-only special register initialized with the number of thread ids in each CTA
-dimension. The `%ntid` special register contains a 3D CTA shape vector that holds the CTA
-dimensions. CTA dimensions are non-zero; the fourth element is unused and always returns zero. The
-total number of threads in a CTA is `(%ntid.x * %ntid.y * %ntid.z)`.
+A predefined, read-only special register initialized with the number of thread ids in each CTA dimension. The `%ntid` special register contains a 3D CTA shape vector that holds the CTA dimensions. CTA dimensions are non-zero; the fourth element is unused and always returns zero. The total number of threads in a CTA is `(%ntid.x * %ntid.y * %ntid.z)`.
 
 ```
 %ntid.y == %ntid.z == 1 in 1D CTAs.
-
 %ntid.z ==1 in 2D CTAs.
 ```
 
@@ -36,9 +31,7 @@ PTX ISA Notes
 
 Introduced in PTX ISA version 1.0 with type `.v4.u16`.
 
-Redefined as type `.v4.u32` in PTX ISA version 2.0. For compatibility with legacy PTX code, 16-bit
-`mov` and `cvt` instructions may be used to read the lower 16-bits of each component of
-`%ntid`.
+Redefined as type `.v4.u32` in PTX ISA version 2.0. For compatibility with legacy PTX code, 16-bit `mov` and `cvt` instructions may be used to read the lower 16-bits of each component of `%ntid`.
 
 Target ISA Notes
 
@@ -48,16 +41,10 @@ Examples
 
 ```
 // compute unified thread id for 2D CTA
-
 mov.u32  %r0,%tid.x;
-
 mov.u32  %h1,%tid.y;
-
 mov.u32  %h2,%ntid.x;
-
 mad.u32  %r0,%h1,%h2,%r0;
-
-
 
 mov.u16  %rh,%ntid.x;      // legacy code
 ```

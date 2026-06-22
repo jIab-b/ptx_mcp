@@ -1,4 +1,4 @@
-#### 9.7.3.10. Floating Point Instructions: neg 
+#### 9.7.3.10. Floating Point Instructions: `neg`
 
 `neg`
 
@@ -8,7 +8,6 @@ Syntax
 
 ```
 neg{.ftz}.f32  d, a;
-
 neg.f64        d, a;
 ```
 
@@ -26,18 +25,19 @@ Notes
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `neg.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   `neg.f64` supports subnormal numbers.
+`neg.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
 
-    `neg.f32` flushes subnormal inputs and results to sign-preserving zero.
+**`sm_1x`**
 
-`NaN` inputs yield an unspecified `NaN`. Future implementations may comply with the IEEE 754
-standard by preserving payload and modifying only the sign bit.
+`neg.f64` supports subnormal numbers.
+
+`neg.f32` flushes subnormal inputs and results to sign-preserving zero.
+
+`NaN` inputs yield an unspecified `NaN`. Future implementations may comply with the IEEE 754 standard by preserving payload and modifying only the sign bit.
 
 PTX ISA Notes
 

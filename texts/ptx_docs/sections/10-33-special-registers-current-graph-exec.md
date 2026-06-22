@@ -1,4 +1,4 @@
-## 10.33. Special Registers: %current_graph_exec 
+## 10.33. Special Registers: `%current_graph_exec`
 
 `%current_graph_exec`
 
@@ -12,9 +12,7 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register initialized with the identifier referring to the CUDA
-device graph being currently executed. This register is 0 if the executing kernel is not part of a
-CUDA device graph.
+A predefined, read-only special register initialized with the identifier referring to the CUDA device graph being currently executed. This register is 0 if the executing kernel is not part of a CUDA device graph.
 
 Refer to the *CUDA Programming Guide* for more details on CUDA device graphs.
 

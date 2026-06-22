@@ -1,4 +1,4 @@
-## 10.30. Special Registers: %total_smem_size 
+## 10.30. Special Registers: `%total_smem_size`
 
 `%total_smem_size`
 
@@ -12,12 +12,9 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register initialized with total size of shared memory allocated
-(statically and dynamically, excluding the shared memory reserved for the NVIDIA system software
-use) for the CTA of a kernel at launch time.
+A predefined, read-only special register initialized with total size of shared memory allocated (statically and dynamically, excluding the shared memory reserved for the NVIDIA system software use) for the CTA of a kernel at launch time.
 
-Size is returned in multiples of shared memory allocation unit size supported by target
-architecture.
+Size is returned in multiples of shared memory allocation unit size supported by target architecture.
 
 Allocation unit values are as follows:
 

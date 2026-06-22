@@ -1,4 +1,4 @@
-#### 9.7.2.1. Extended-Precision Arithmetic Instructions: add.cc 
+#### 9.7.2.1. Extended-Precision Arithmetic Instructions: `add.cc`
 
 `add.cc`
 
@@ -8,8 +8,6 @@ Syntax
 
 ```
 add.cc.type  d, a, b;
-
-
 
 .type = { .u32, .s32, .u64, .s64 };
 ```
@@ -50,10 +48,7 @@ Examples
 
 ```
 @p  add.cc.u32   x1,y1,z1;   // extended-precision addition of
-
 @p  addc.cc.u32  x2,y2,z2;   // two 128-bit values
-
 @p  addc.cc.u32  x3,y3,z3;
-
 @p  addc.u32     x4,y4,z4;
 ```

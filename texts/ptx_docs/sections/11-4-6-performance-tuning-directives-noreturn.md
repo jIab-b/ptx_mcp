@@ -1,4 +1,4 @@
-### 11.4.6. Performance-Tuning Directives: .noreturn 
+### 11.4.6. Performance-Tuning Directives: `.noreturn`
 
 `.noreturn`
 
@@ -16,14 +16,11 @@ Indicate that the function does not return to its caller function.
 
 Semantics
 
-An optional `.noreturn` directive indicates that the function does not return to caller
-function. `.noreturn` directive can only be specified on device functions and must appear between
-a `.func` directive and its body.
+An optional `.noreturn` directive indicates that the function does not return to caller function. `.noreturn` directive can only be specified on device functions and must appear between a `.func` directive and its body.
 
 The directive cannot be specified on functions which have return parameters.
 
-If a function with `.noreturn` directive returns to the caller function at runtime, then the
-behavior is undefined.
+If a function with `.noreturn` directive returns to the caller function at runtime, then the behavior is undefined.
 
 PTX ISA Notes
 

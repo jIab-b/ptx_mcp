@@ -1,4 +1,4 @@
-#### 9.7.5.2. Mixed Precision Floating Point Instructions: sub 
+#### 9.7.5.2. Mixed Precision Floating Point Instructions: `sub`
 
 `sub`
 
@@ -9,17 +9,13 @@ Syntax
 ```
 sub{.rnd}{.sat}.f32.atype  d, a, c;
 
-
-
 .atype = { .f16, .bf16};
-
 .rnd   = { .rn, .rz, .rm, .rp };
 ```
 
 Description
 
-Converts input operand `a` from `.atype` into `.f32` type. The converted value is then
-used for the subtraction. The resulting value is stored in the destination operand `d`.
+Converts input operand `a` from `.atype` into `.f32` type. The converted value is then used for the subtraction. The resulting value is stored in the destination operand `d`.
 
 Semantics
 
@@ -31,29 +27,31 @@ Notes
 
 Rounding modifiers:
 
-`.rn`
-:   mantissa LSB rounds to nearest even
+**`.rn`**
 
-`.rz`
-:   mantissa LSB rounds towards zero
+mantissa LSB rounds to nearest even
 
-`.rm`
-:   mantissa LSB rounds towards negative infinity
+**`.rz`**
 
-`.rp`
-:   mantissa LSB rounds towards positive infinity
+mantissa LSB rounds towards zero
 
-The default value of rounding modifier is `.rn`. Note that an `sub` instruction with an explicit
-rounding modifier is treated conservatively by the code optimizer. An `sub` instruction with no
-rounding modifier defaults to round-to-nearest-even and may be optimized aggressively by the code
-optimizer. In particular, `mul`/`sub` sequences with no rounding modifiers may be optimized to
-use fused-multiply-add instructions on the target device.
+**`.rm`**
 
-Subnormal numbers:
-:   By default, subnormal numbers are supported.
+mantissa LSB rounds towards negative infinity
 
-Saturation modifier:
-:   `sub.sat` clamps the result to [0.0, 1.0]. `NaN` results are flushed to `+0.0f`.
+**`.rp`**
+
+mantissa LSB rounds towards positive infinity
+
+The default value of rounding modifier is `.rn`. Note that an `sub` instruction with an explicit rounding modifier is treated conservatively by the code optimizer. An `sub` instruction with no rounding modifier defaults to round-to-nearest-even and may be optimized aggressively by the code optimizer. In particular, `mul`/`sub` sequences with no rounding modifiers may be optimized to use fused-multiply-add instructions on the target device.
+
+**Subnormal numbers:**
+
+By default, subnormal numbers are supported.
+
+**Saturation modifier:**
+
+`sub.sat` clamps the result to [0.0, 1.0]. `NaN` results are flushed to `+0.0f`.
 
 PTX ISA Notes
 
@@ -67,8 +65,6 @@ Examples
 
 ```
 .reg .f32 fc, fd;
-
 .reg .f16 ha;
-
 sub.rz.f32.f16.sat   fd, ha, fc;
 ```

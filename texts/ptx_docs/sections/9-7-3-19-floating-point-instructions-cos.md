@@ -1,4 +1,4 @@
-#### 9.7.3.19. Floating Point Instructions: cos 
+#### 9.7.3.19. Floating Point Instructions: `cos`
 
 `cos`
 
@@ -39,23 +39,23 @@ The maximum absolute error over input range is as follows:
 | Range | [-2pi .. 2pi] | [-100pi .. +100pi] |
 | Error | 2-20.5 | 2-14.7 |
 
-Outside of the range [-100pi .. +100pi], only best effort
-is provided. There are no defined error guarantees.
+Outside of the range [-100pi .. +100pi], only best effort is provided. There are no defined error guarantees.
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `cos.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   Subnormal inputs and results to sign-preserving zero.
+`cos.ftz.f32` flushes subnormal inputs and results to sign-preserving zero.
+
+**`sm_1x`**
+
+Subnormal inputs and results to sign-preserving zero.
 
 PTX ISA Notes
 
-`cos.f32` introduced in PTX ISA version 1.0. Explicit modifiers `.approx` and `.ftz`
-introduced in PTX ISA version 1.4.
+`cos.f32` introduced in PTX ISA version 1.0. Explicit modifiers `.approx` and `.ftz` introduced in PTX ISA version 1.4.
 
 For PTX ISA version 1.4 and later, the `.approx` modifier is required.
 

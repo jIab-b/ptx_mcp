@@ -1,4 +1,4 @@
-#### 9.7.8.9. Logic and Shift Instructions: shr 
+#### 9.7.8.9. Logic and Shift Instructions: `shr`
 
 `shr`
 
@@ -9,19 +9,14 @@ Syntax
 ```
 shr.type d, a, b;
 
-
-
 .type = { .b16, .b32, .b64,
-
           .u16, .u32, .u64,
-
           .s16, .s32, .s64 };
 ```
 
 Description
 
-Shift `a` right by the amount specified by unsigned 32-bit value in `b`. Signed shifts fill with
-the sign bit, unsigned and untyped shifts fill with `0`.
+Shift `a` right by the amount specified by unsigned 32-bit value in `b`. Signed shifts fill with the sign bit, unsigned and untyped shifts fill with `0`.
 
 Semantics
 
@@ -33,8 +28,7 @@ Notes
 
 Shift amounts greater than the register width *N* are clamped to *N*.
 
-The sizes of the destination and first source operand must match, but not necessarily the type. The
-`b` operand must be a 32-bit value, regardless of the instruction type.
+The sizes of the destination and first source operand must match, but not necessarily the type. The `b` operand must be a 32-bit value, regardless of the instruction type.
 
 Bit-size types are included for symmetry with `shl`.
 
@@ -50,8 +44,6 @@ Example
 
 ```
 shr.u16  c,a,2;
-
 shr.s32  i,i,1;
-
 shr.b16  k,i,j;
 ```

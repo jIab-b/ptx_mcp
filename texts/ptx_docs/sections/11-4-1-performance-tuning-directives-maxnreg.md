@@ -1,4 +1,4 @@
-### 11.4.1. Performance-Tuning Directives: .maxnreg 
+### 11.4.1. Performance-Tuning Directives: `.maxnreg`
 
 `.maxnreg`
 
@@ -16,9 +16,7 @@ Declare the maximum number of registers per thread in a CTA.
 
 Semantics
 
-The compiler guarantees that this limit will not be exceeded. The actual number of registers used
-may be less; for example, the backend may be able to compile to fewer registers, or the maximum
-number of registers may be further constrained by `.maxntid` and `.maxctapersm`.
+The compiler guarantees that this limit will not be exceeded. The actual number of registers used may be less; for example, the backend may be able to compile to fewer registers, or the maximum number of registers may be further constrained by `.maxntid` and `.maxctapersm`.
 
 PTX ISA Notes
 

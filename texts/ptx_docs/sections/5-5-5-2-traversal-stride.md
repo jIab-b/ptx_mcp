@@ -1,4 +1,3 @@
-#### 5.5.5.2. Traversal Stride 
+#### 5.5.5.2. Traversal Stride
 
-This is similar to im2col mode with the exception of that the number of elements traversed
-along only the `W` dimension is strided by the traversal stride as specified in the TensorMap.
+This is similar to im2col mode with the exception of that the number of elements traversed along only the `W` dimension is strided by the traversal stride as specified in the TensorMap.

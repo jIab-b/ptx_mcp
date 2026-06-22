@@ -1,4 +1,4 @@
-#### 9.7.8.5. Logic and Shift Instructions: cnot 
+#### 9.7.8.5. Logic and Shift Instructions: `cnot`
 
 `cnot`
 
@@ -8,8 +8,6 @@ Syntax
 
 ```
 cnot.type d, a;
-
-
 
 .type = { .b16, .b32, .b64 };
 ```

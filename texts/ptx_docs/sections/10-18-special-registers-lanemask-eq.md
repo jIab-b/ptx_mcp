@@ -1,8 +1,8 @@
-## 10.18. Special Registers: %lanemask_eq 
+## 10.18. Special Registers: `%lanemask_eq`
 
 `%lanemask_eq`
 
-32-bit mask with bit set in position equal to the thread’s lane number in the warp.
+32-bit mask with bit set in position equal to the threadâs lane number in the warp.
 
 Syntax (predefined)
 
@@ -12,8 +12,7 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register initialized with a 32-bit mask with a bit set in the
-position equal to the thread’s lane number in the warp.
+A predefined, read-only special register initialized with a 32-bit mask with a bit set in the position equal to the threadâs lane number in the warp.
 
 PTX ISA Notes
 

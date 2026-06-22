@@ -1,4 +1,4 @@
-### 11.4.2. Performance-Tuning Directives: .maxntid 
+### 11.4.2. Performance-Tuning Directives: `.maxntid`
 
 `.maxntid`
 
@@ -8,27 +8,19 @@ Syntax
 
 ```
 .maxntid nx
-
 .maxntid nx, ny
-
 .maxntid nx, ny, nz
 ```
 
 Description
 
-Declare the maximum number of threads in the thread block (CTA). This maximum is specified by giving
-the maximum extent of each dimension of the 1D, 2D, or 3D CTA. The maximum number of threads is the
-product of the maximum extent in each dimension.
+Declare the maximum number of threads in the thread block (CTA). This maximum is specified by giving the maximum extent of each dimension of the 1D, 2D, or 3D CTA. The maximum number of threads is the product of the maximum extent in each dimension.
 
 Semantics
 
-The maximum number of threads in the thread block, computed as the product of the maximum extent
-specified for each dimension, is guaranteed not to be exceeded in any invocation of the kernel in
-which this directive appears. Exceeding the maximum number of threads results in a runtime error or
-kernel launch failure.
+The maximum number of threads in the thread block, computed as the product of the maximum extent specified for each dimension, is guaranteed not to be exceeded in any invocation of the kernel in which this directive appears. Exceeding the maximum number of threads results in a runtime error or kernel launch failure.
 
-Note that this directive guarantees that the *total* number of threads does not exceed the maximum,
-but does not guarantee that the limit in any particular dimension is not exceeded.
+Note that this directive guarantees that the *total* number of threads does not exceed the maximum, but does not guarantee that the limit in any particular dimension is not exceeded.
 
 PTX ISA Notes
 
@@ -42,6 +34,5 @@ Examples
 
 ```
 .entry foo .maxntid 256       { ... }  // max threads = 256
-
 .entry bar .maxntid 16,16,4   { ... }  // max threads = 1024
 ```

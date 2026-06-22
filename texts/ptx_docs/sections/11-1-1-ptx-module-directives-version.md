@@ -1,4 +1,4 @@
-### 11.1.1. PTX Module Directives: .version 
+### 11.1.1. PTX Module Directives: `.version`
 
 `.version`
 
@@ -14,19 +14,15 @@ Description
 
 Specifies the PTX language version number.
 
-The *major* number is incremented when there are incompatible changes to the PTX language, such as
-changes to the syntax or semantics. The version major number is used by the PTX compiler to ensure
-correct execution of legacy PTX code.
+The *major* number is incremented when there are incompatible changes to the PTX language, such as changes to the syntax or semantics. The version major number is used by the PTX compiler to ensure correct execution of legacy PTX code.
 
 The *minor* number is incremented when new features are added to PTX.
 
 Semantics
 
-Indicates that this module must be compiled with tools that support an equal or greater version
-number.
+Indicates that this module must be compiled with tools that support an equal or greater version number.
 
-Each PTX module must begin with a `.version` directive, and no other `.version` directive is
-allowed anywhere else within the module.
+Each PTX module must begin with a `.version` directive, and no other `.version` directive is allowed anywhere else within the module.
 
 PTX ISA Notes
 
@@ -40,8 +36,6 @@ Examples
 
 ```
 .version 3.1
-
 .version 3.0
-
 .version 2.3
 ```

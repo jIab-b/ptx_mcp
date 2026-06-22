@@ -1,4 +1,4 @@
-### 11.4.7. Performance-Tuning Directives: .pragma 
+### 11.4.7. Performance-Tuning Directives: `.pragma`
 
 `.pragma`
 
@@ -18,9 +18,7 @@ The `.pragma` directive may occur at module-scope, at entry-scope, or at stateme
 
 Semantics
 
-The interpretation of `.pragma` directive strings is implementation-specific and has no impact on
-PTX semantics. See [Descriptions of .pragma Strings](#descriptions-pragma-strings) for
-descriptions of the pragma strings defined in `ptxas`.
+The interpretation of `.pragma` directive strings is implementation-specific and has no impact on PTX semantics. See [Descriptions of .pragma Strings](#descriptions-pragma-strings) for descriptions of the pragma strings defined in `ptxas`.
 
 PTX ISA Notes
 
@@ -35,9 +33,6 @@ Examples
 ```
 .pragma "nounroll";    // disable unrolling in backend
 
-
-
 // disable unrolling for current kernel
-
 .entry foo .pragma "nounroll"; { ... }
 ```

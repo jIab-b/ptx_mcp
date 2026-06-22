@@ -1,4 +1,4 @@
-## 10.24. Special Registers: %clock64 
+## 10.24. Special Registers: `%clock64`
 
 `%clock64`
 

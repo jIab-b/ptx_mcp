@@ -1,4 +1,4 @@
-#### 9.7.8.1. Logic and Shift Instructions: and 
+#### 9.7.8.1. Logic and Shift Instructions: `and`
 
 `and`
 
@@ -8,8 +8,6 @@ Syntax
 
 ```
 and.type d, a, b;
-
-
 
 .type = { .pred, .b16, .b32, .b64 };
 ```
@@ -42,6 +40,5 @@ Examples
 
 ```
 and.b32  x,q,r;
-
 and.b32  sign,fpvalue,0x80000000;
 ```

@@ -1,4 +1,4 @@
-### 11.6.3. Linking Directives: .weak 
+### 11.6.3. Linking Directives: `.weak`
 
 `.weak`
 
@@ -12,11 +12,7 @@ Syntax
 
 Description
 
-Declares identifier to be globally visible but *weak*. Weak symbols are similar to globally visible
-symbols, except during linking, weak symbols are only chosen after globally visible symbols during
-symbol resolution. Unlike globally visible symbols, multiple object files may declare the same weak
-symbol, and references to a symbol get resolved against a weak symbol only if no global symbols have
-the same name.
+Declares identifier to be globally visible but *weak*. Weak symbols are similar to globally visible symbols, except during linking, weak symbols are only chosen after globally visible symbols during symbol resolution. Unlike globally visible symbols, multiple object files may declare the same weak symbol, and references to a symbol get resolved against a weak symbol only if no global symbols have the same name.
 
 PTX ISA Notes
 

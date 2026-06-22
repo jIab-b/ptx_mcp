@@ -1,4 +1,4 @@
-## 10.5. Special Registers: %nwarpid 
+## 10.5. Special Registers: `%nwarpid`
 
 `%nwarpid`
 

@@ -1,4 +1,4 @@
-#### 9.7.3.14. Floating Point Instructions: rcp.approx.ftz.f64 
+#### 9.7.3.14. Floating Point Instructions: `rcp.approx.ftz.f64`
 
 `rcp.approx.ftz.f64`
 
@@ -14,21 +14,16 @@ Description
 
 Compute a fast, gross approximation to the reciprocal as follows:
 
-1. extract the most-significant 32 bits of `.f64` operand `a` in 1.11.20 IEEE floating-point
-   format (i.e., ignore the least-significant 32 bits of `a`),
-2. compute an approximate `.f64` reciprocal of this value using the most-significant 20 bits of
-   the mantissa of operand `a`,
-3. place the resulting 32-bits in 1.11.20 IEEE floating-point format in the most-significant 32-bits
-   of destination `d`,and
+1. extract the most-significant 32 bits of `.f64` operand `a` in 1.11.20 IEEE floating-point format (i.e., ignore the least-significant 32 bits of `a`),
+2. compute an approximate `.f64` reciprocal of this value using the most-significant 20 bits of the mantissa of operand `a`,
+3. place the resulting 32-bits in 1.11.20 IEEE floating-point format in the most-significant 32-bits of destination `d`,and
 4. zero the least significant 32 mantissa bits of `.f64` destination `d`.
 
 Semantics
 
 ```
 tmp = a[63:32]; // upper word of a, 1.11.20 format
-
 d[63:32] = 1.0 / tmp;
-
 d[31:0] = 0x00000000;
 ```
 

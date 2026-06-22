@@ -1,4 +1,4 @@
-### 11.4.8. Performance-Tuning Directives: .abi_preserve 
+### 11.4.8. Performance-Tuning Directives: `.abi_preserve`
 
 `.abi_preserve`
 
@@ -12,19 +12,13 @@ Syntax
 
 Description
 
-It is an architecture agnostic value specifying actual number of general purpose registers.
-Internally ABI defines some general purpose registers as preserved (callee save) registers.
-Integer N specifies the actual number of general purpose registers that should be preserved by
-the function.
+It is an architecture agnostic value specifying actual number of general purpose registers. Internally ABI defines some general purpose registers as preserved (callee save) registers. Integer N specifies the actual number of general purpose registers that should be preserved by the function.
 
-`.abi_preserve` directive can only be specified on device functions and must appear between
-a `.func` directive and its body.
+`.abi_preserve` directive can only be specified on device functions and must appear between a `.func` directive and its body.
 
 Semantics
 
-When this directive is specified compiler backend modifies low level ABI components to ensure that
-number of live data variables in the callers of this function that are stored in the callee save
-registers are less than specified value.
+When this directive is specified compiler backend modifies low level ABI components to ensure that number of live data variables in the callers of this function that are stored in the callee save registers are less than specified value.
 
 PTX ISA Notes
 
@@ -39,17 +33,10 @@ Examples
 ```
 .func bar() .abi_preserve 8
 
-
-
 // Indirect call via call prototype
-
 .func (.param .b32 out[30]) foo (.param .b32 in[30]) .abi_preserve 10 { ... }
-
 ...
-
 mov.b64 lpfoo, foo;
-
 prot: .callprototype (.param .b32 out[30]) _ (.param .b32 in[30]) .abi_preserve 10;
-
 call (out), lpfoo, (in), prot;
 ```

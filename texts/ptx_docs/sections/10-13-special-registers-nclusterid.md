@@ -1,4 +1,4 @@
-## 10.13. Special Registers: %nclusterid 
+## 10.13. Special Registers: `%nclusterid`
 
 `%nclusterid`
 
@@ -8,17 +8,14 @@ Syntax (predefined)
 
 ```
 .sreg .v4 .u32 %nclusterid;
-
 .sreg .u32 %nclusterid.x, %nclusterid.y, %nclusterid.z;
 ```
 
 Description
 
-A predefined, read-only special register initialized with the number of clusters in each grid
-dimension.
+A predefined, read-only special register initialized with the number of clusters in each grid dimension.
 
-The `%nclusterid` special register contains a 3D grid shape vector that holds the grid dimensions
-in terms of clusters. The fourth element is unused and always returns zero.
+The `%nclusterid` special register contains a 3D grid shape vector that holds the grid dimensions in terms of clusters. The fourth element is unused and always returns zero.
 
 Refer to the *Cuda Programming Guide* for details on the maximum values of `%nclusterid.{x,y,z}`.
 
@@ -34,14 +31,9 @@ Examples
 
 ```
 .reg .b32 %r<2>;
-
 .reg .v4 .b32 %rx;
 
-
-
 mov.u32     %r0, %nclusterid.x;
-
 mov.u32     %r1, %nclusterid.z;
-
 mov.v4.u32  %rx, %nclusterid;
 ```

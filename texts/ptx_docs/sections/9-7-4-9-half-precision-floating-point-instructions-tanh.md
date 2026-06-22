@@ -1,4 +1,4 @@
-#### 9.7.4.9. Half Precision Floating Point Instructions: tanh 
+#### 9.7.4.9. Half Precision Floating Point Instructions: `tanh`
 
 `tanh`
 
@@ -9,8 +9,6 @@ Syntax
 ```
 tanh.approx.type d, a;
 
-
-
 .type = {.f16, .f16x2, .bf16, .bf16x2}
 ```
 
@@ -20,33 +18,26 @@ Take hyperbolic tangent value of `a`.
 
 The type of operands `d` and `a` are as specified by `.type`.
 
-For `.f16x2` or `.bf16x2` instruction type, each of the half-word operands are operated in
-parallel and the results are packed appropriately into a `.f16x2` or `.bf16x2`.
+For `.f16x2` or `.bf16x2` instruction type, each of the half-word operands are operated in parallel and the results are packed appropriately into a `.f16x2` or `.bf16x2`.
+
+For `.f16` instruction type, operands `d` and `a` have `.f16` or `.b16` type. For `.f16x2` instruction type, operands `d` and `a` have `.f16x2` or `.b32` type. For `.bf16` instruction type, operands `d` and `a` have `.b16` type. For `.bf16x2` instruction type, operands `d` and `a` have `.b32` type.
 
 Semantics
 
 ```
 if (.type == .f16 || .type == .bf16) {
-
   d = tanh(a)
-
 } else if (.type == .f16x2 || .type == .bf16x2) {
-
   fA[0] = a[0:15];
-
   fA[1] = a[16:31];
-
   d[0] = tanh(fA[0])
-
   d[1] = tanh(fA[1])
-
 }
 ```
 
 Notes
 
-`tanh.approx.{f16, f16x2, bf16, bf16x2}` implements an approximate hyperbolic tangent in the
-target format.
+`tanh.approx.{f16, f16x2, bf16, bf16x2}` implements an approximate hyperbolic tangent in the target format.
 
 Results of `tanh` for various corner-case inputs are as follows:
 
@@ -58,8 +49,7 @@ Results of `tanh` for various corner-case inputs are as follows:
 | +Inf | 1.0 |
 | NaN | NaN |
 
-The maximum absolute error for `.f16` type is 2-10.987. The maximum absolute error for `.bf16`
-type is 2-8.
+The maximum absolute error for `.f16` type is 2-10.987. The maximum absolute error for `.bf16` type is 2-8.
 
 The subnormal numbers are supported.
 
@@ -79,10 +69,7 @@ Examples
 
 ```
 tanh.approx.f16    h1, h0;
-
 tanh.approx.f16x2  hd1, hd0;
-
 tanh.approx.bf16   b1, b0;
-
 tanh.approx.bf16x2 hb1, hb0;
 ```

@@ -1,0 +1,53 @@
+### 11.8.2. Miscellaneous Directives: `.language`
+
+`.language`
+
+Specify the source language(s) used to generate the kernel or function.
+
+Syntax
+
+```
+.language lang-list   // comma separated list of strings or integers
+```
+
+Description
+
+The `.language` directive declares the source language(s) from which the code for the corresponding `.entry` or `.func` function was generated. The directive accepts a comma-separated list of language codes, specified as either quoted string names or unsigned integer values.
+
+The `.language` directive is allowed for both `.entry` and `.func` functions and must appear between the function directive and its body.
+
+If the `.language` directive is not specified, the language defaults to `"ptx"`.
+
+Multiple languages may be specified for a single function, indicating mixed-language origins. Language names are case-insensitive.
+
+Language codes specified as unsigned integers must be in the range `[0..10]`. The mapping between string names and integer codes is:
+
+| Code | String |
+| --- | --- |
+| 0 | âunknownâ |
+| 1 | Reserved |
+| 2 | Reserved |
+| 3 | âptxâ |
+| 4 | ânvvmâ |
+| 5 | âcuda c++â |
+| 6 | âcuda c++ tileâ |
+| 7 | âtile irâ |
+| 8 | âpython-cutileâ |
+| 9 | âfortranâ |
+| 10 | âoptixâ |
+
+PTX ISA Notes
+
+Introduced in PTX ISA version 9.3.
+
+Target ISA Notes
+
+Supported on all target architectures.
+
+Examples
+
+```
+.entry foo () .language "ptx"                    { ... }
+.func bar ()  .language "nvvm", "ptx"            { ... }
+.entry baz () .language "ptx", "cuda c++", 0x7   { ... }
+```

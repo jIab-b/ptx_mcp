@@ -1,4 +1,4 @@
-#### 9.7.3.1. Floating Point Instructions: testp 
+#### 9.7.3.1. Floating Point Instructions: `testp`
 
 `testp`
 
@@ -9,39 +9,39 @@ Syntax
 ```
 testp.op.type  p, a;  // result is .pred
 
-
-
 .op   = { .finite, .infinite,
-
           .number, .notanumber,
-
           .normal, .subnormal };
-
 .type = { .f32, .f64 };
 ```
 
 Description
 
-`testp` tests common properties of floating-point numbers and returns a predicate value of `1`
-if `True` and `0` if `False`.
+`testp` tests common properties of floating-point numbers and returns a predicate value of `1` if `True` and `0` if `False`.
 
-`testp.finite`
-:   `True` if the input is not infinite or `NaN`
+**`testp.finite`**
 
-`testp.infinite`
-:   `True` if the input is positive or negative infinity
+`True` if the input is not infinite or `NaN`
 
-`testp.number`
-:   `True` if the input is not `NaN`
+**`testp.infinite`**
 
-`testp.notanumber`
-:   `True` if the input is `NaN`
+`True` if the input is positive or negative infinity
 
-`testp.normal`
-:   `True` if the input is a normal number (not `NaN`, not infinity)
+**`testp.number`**
 
-`testp.subnormal`
-:   `True` if the input is a subnormal number (not `NaN`, not infinity)
+`True` if the input is not `NaN`
+
+**`testp.notanumber`**
+
+`True` if the input is `NaN`
+
+**`testp.normal`**
+
+`True` if the input is a normal number (not `NaN`, not infinity)
+
+**`testp.subnormal`**
+
+`True` if the input is a subnormal number (not `NaN`, not infinity)
 
 As a special case, positive and negative zero are considered normal numbers.
 
@@ -57,6 +57,5 @@ Examples
 
 ```
 testp.notanumber.f32  isnan, f0;
-
 testp.infinite.f64    p, X;
 ```

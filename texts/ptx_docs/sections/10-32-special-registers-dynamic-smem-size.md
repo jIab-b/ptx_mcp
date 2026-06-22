@@ -1,4 +1,4 @@
-## 10.32. Special Registers: %dynamic_smem_size 
+## 10.32. Special Registers: `%dynamic_smem_size`
 
 `%dynamic_smem_size`
 

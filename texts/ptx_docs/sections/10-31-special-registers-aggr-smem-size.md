@@ -1,4 +1,4 @@
-## 10.31. Special Registers: %aggr_smem_size 
+## 10.31. Special Registers: `%aggr_smem_size`
 
 `%aggr_smem_size`
 
@@ -12,9 +12,7 @@ Syntax (predefined)
 
 Description
 
-A predefined, read-only special register initialized with total aggregated size of shared memory
-consisting of the size of user shared memory allocated (statically and dynamically) at launch time
-and the size of shared memory region which is reserved for the NVIDIA system software use.
+A predefined, read-only special register initialized with total aggregated size of shared memory consisting of the size of user shared memory allocated (statically and dynamically) at launch time and the size of shared memory region which is reserved for the NVIDIA system software use.
 
 PTX ISA Notes
 

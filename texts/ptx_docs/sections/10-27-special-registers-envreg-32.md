@@ -1,4 +1,4 @@
-## 10.27. Special Registers: %envreg<32> 
+## 10.27. Special Registers: `%envreg<32>`
 
 `%envreg<32>`
 
@@ -12,9 +12,7 @@ Syntax (predefined)
 
 Description
 
-A set of 32 pre-defined read-only registers used to capture execution environment of PTX program
-outside of PTX virtual machine. These registers are initialized by the driver prior to kernel launch
-and can contain cta-wide or grid-wide values.
+A set of 32 pre-defined read-only registers used to capture execution environment of PTX program outside of PTX virtual machine. These registers are initialized by the driver prior to kernel launch and can contain cta-wide or grid-wide values.
 
 Precise semantics of these registers is defined in the driver documentation.
 

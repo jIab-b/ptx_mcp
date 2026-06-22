@@ -1,19 +1,8 @@
-## 6.6. Operand Costs 
+## 6.6. Operand Costs
 
-Operands from different state spaces affect the speed of an operation. Registers are fastest, while
-global memory is slowest. Much of the delay to memory can be hidden in a number of ways. The first
-is to have multiple threads of execution so that the hardware can issue a memory operation and then
-switch to other execution. Another way to hide latency is to issue the load instructions as early as
-possible, as execution is not blocked until the desired result is used in a subsequent (in time)
-instruction. The register in a store operation is available much more
-quickly. [Table 19](#operand-costs-cost-estimates-for-sccessing-state-spaces) gives estimates of the
-costs of using different kinds of memory.
+Operands from different state spaces affect the speed of an operation. Registers are fastest, while global memory is slowest. Much of the delay to memory can be hidden in a number of ways. The first is to have multiple threads of execution so that the hardware can issue a memory operation and then switch to other execution. Another way to hide latency is to issue the load instructions as early as possible, as execution is not blocked until the desired result is used in a subsequent (in time) instruction. The register in a store operation is available much more quickly. [Table 19](#operand-costs-cost-estimates-for-sccessing-state-spaces) gives estimates of the costs of using different kinds of memory.
 
-Table 19 Cost Estimates for Accessing State-Spaces[](#operand-costs-cost-estimates-for-sccessing-state-spaces "Permalink to this table")
-
-
-
-
+**Table 19 Cost Estimates for Accessing State-Spaces**
 
 | Space | Time | Notes |
 | --- | --- | --- |

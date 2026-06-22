@@ -1,4 +1,4 @@
-### 11.2.1. Kernel and Function Directives: .entry 
+### 11.2.1. Kernel and Function Directives: `.entry`
 
 `.entry`
 
@@ -8,7 +8,6 @@ Syntax
 
 ```
 .entry kernel-name ( param-list )  kernel-body
-
 .entry kernel-name  kernel-body
 ```
 
@@ -16,13 +15,9 @@ Description
 
 Defines a kernel entry point name, parameters, and body for the kernel function.
 
-Parameters are passed via `.param` space memory and are listed within an optional parenthesized
-parameter list. Parameters may be referenced by name within the kernel body and loaded into
-registers using `ld.param{::entry}` instructions.
+Parameters are passed via `.param` space memory and are listed within an optional parenthesized parameter list. Parameters may be referenced by name within the kernel body and loaded into registers using `ld.param{::entry}` instructions.
 
-In addition to normal parameters, opaque `.texref`, `.samplerref`, and `.surfref` variables
-may be passed as parameters. These parameters can only be referenced by name within texture and
-surface load, store, and query instructions and cannot be accessed via `ld.param` instructions.
+In addition to normal parameters, opaque `.texref`, `.samplerref`, and `.surfref` variables may be passed as parameters. These parameters can only be referenced by name within texture and surface load, store, and query instructions and cannot be accessed via `ld.param` instructions.
 
 The shape and size of the CTA executing the kernel are available in special registers.
 
@@ -30,17 +25,13 @@ Semantics
 
 Specify the entry point for a kernel program.
 
-At kernel launch, the kernel dimensions and properties are established and made available via
-special registers, e.g., `%ntid`, `%nctaid`, etc.
+At kernel launch, the kernel dimensions and properties are established and made available via special registers, e.g., `%ntid`, `%nctaid`, etc.
 
 PTX ISA Notes
 
-For PTX ISA version 1.4 and later, parameter variables are declared in the kernel parameter
-list. For PTX ISA versions 1.0 through 1.3, parameter variables are declared in the kernel body.
+For PTX ISA version 1.4 and later, parameter variables are declared in the kernel parameter list. For PTX ISA versions 1.0 through 1.3, parameter variables are declared in the kernel body.
 
-The maximum memory size supported by PTX for normal (non-opaque type) parameters is 32764
-bytes. Depending upon the PTX ISA version, the parameter size limit varies. The following table
-shows the allowed parameter size for a PTX ISA version:
+The maximum memory size supported by PTX for normal (non-opaque type) parameters is 32764 bytes. Depending upon the PTX ISA version, the parameter size limit varies. The following table shows the allowed parameter size for a PTX ISA version:
 
 | PTX ISA Version | Maximum parameter size (In bytes) |
 | --- | --- |
@@ -63,34 +54,19 @@ Examples
 
 ```
 .entry cta_fft
-
 .entry filter ( .param .b32 x, .param .b32 y, .param .b32 z )
-
 {
-
     .reg .b32 %r<99>;
-
     ld.param.b32  %r1, [x];
-
     ld.param.b32  %r2, [y];
-
     ld.param.b32  %r3, [z];
-
     ...
-
 }
 
-
-
 .entry prefix_sum ( .param .align 4 .s32 pitch[8000] )
-
 {
-
     .reg .s32 %t;
-
     ld.param::entry.s32  %t, [pitch];
-
     ...
-
 }
 ```

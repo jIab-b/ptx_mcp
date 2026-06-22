@@ -1,4 +1,4 @@
-#### 9.7.3.22. Floating Point Instructions: tanh 
+#### 9.7.3.22. Floating Point Instructions: `tanh`
 
 `tanh`
 
@@ -36,14 +36,11 @@ Results of `tanh` for various corner-case inputs are as follows:
 | +Inf | 1.0 |
 | NaN | NaN |
 
-The maximum relative error over the entire floating point
-range is 2-11.
-The subnormal numbers are supported.
+The maximum relative error over the entire floating point range is 2-11. The subnormal numbers are supported.
 
 Note
 
-The subnormal inputs gets passed through to the output since the value of `tanh(x)` for small
-values of `x` is approximately the same as `x`.
+The subnormal inputs gets passed through to the output since the value of `tanh(x)` for small values of `x` is approximately the same as `x`.
 
 PTX ISA Notes
 

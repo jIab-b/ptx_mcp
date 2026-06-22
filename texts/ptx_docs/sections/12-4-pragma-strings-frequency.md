@@ -1,4 +1,4 @@
-## 12.4. Pragma Strings: "frequency" 
+## 12.4. Pragma Strings: `"frequency"`
 
 `"frequency"`
 
@@ -12,15 +12,11 @@ Syntax
 
 Description
 
-The `"frequency" pragma` is a directive that specifies the number of times a basic block is
-executed by an executing thread. The optimizing compiler backend treats this pragma as a hint
-which will be used for optimizations.
+The `"frequency" pragma` is a directive that specifies the number of times a basic block is executed by an executing thread. The optimizing compiler backend treats this pragma as a hint which will be used for optimizations.
 
 Operand `n` is a 64-bit non-negative integer constant that specifies the execution frequency.
 
-Note that in order to have the desired effect of this pragma, it should be specified at the start of
-the basic block. Basic block is defined as a straight-line sequence of instructions with only one
-entry point and one exit point.
+Note that in order to have the desired effect of this pragma, it should be specified at the start of the basic block. Basic block is defined as a straight-line sequence of instructions with only one entry point and one exit point.
 
 PTX ISA Notes
 
@@ -34,12 +30,8 @@ Examples
 
 ```
 .entry foo (...)
-
 {
-
     .pragma "frequency 32";
-
     ...
-
 }
 ```

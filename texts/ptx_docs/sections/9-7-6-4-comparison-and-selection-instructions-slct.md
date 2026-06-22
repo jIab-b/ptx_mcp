@@ -1,4 +1,4 @@
-#### 9.7.6.4. Comparison and Selection Instructions: slct 
+#### 9.7.6.4. Comparison and Selection Instructions: `slct`
 
 `slct`
 
@@ -8,26 +8,17 @@ Syntax
 
 ```
 slct.dtype.s32        d, a, b, c;
-
 slct{.ftz}.dtype.f32  d, a, b, c;
 
-
-
 .dtype = { .b16, .b32, .b64,
-
            .u16, .u32, .u64,
-
            .s16, .s32, .s64,
-
                  .f32, .f64 };
 ```
 
 Description
 
-Conditional selection. If `c` >= 0, `a` is stored in `d`, otherwise `b` is stored in
-`d`. Operands `d`, `a`, and `b` are treated as a bitsize type of the same width as the first
-instruction type; operand `c` must match the second instruction type (`.s32` or `.f32`). The
-selected input is copied to the output without modification.
+Conditional selection. If `c` >= 0, `a` is stored in `d`, otherwise `b` is stored in `d`. Operands `d`, `a`, and `b` are treated as a bitsize type of the same width as the first instruction type; operand `c` must match the second instruction type (`.s32` or `.f32`). The selected input is copied to the output without modification.
 
 Semantics
 
@@ -41,19 +32,19 @@ For `.f32` comparisons, negative zero equals zero.
 
 Subnormal numbers:
 
-`sm_20+`
-:   By default, subnormal numbers are supported.
+**`sm_20+`**
 
-    `slct.ftz.dtype.f32` flushes subnormal values of operand `c` to sign-preserving zero, and
-    operand `a` is selected.
+By default, subnormal numbers are supported.
 
-`sm_1x`
-:   `slct.dtype.f32` flushes subnormal values of operand `c` to sign-preserving zero, and operand
-    `a` is selected.
+`slct.ftz.dtype.f32` flushes subnormal values of operand `c` to sign-preserving zero, and operand `a` is selected.
+
+**`sm_1x`**
+
+`slct.dtype.f32` flushes subnormal values of operand `c` to sign-preserving zero, and operand `a` is selected.
 
 Modifier `.ftz` applies only to `.f32` comparisons.
 
-If operand `c` is `NaN`, the comparison is unordered and operand `b` is selected.
+If operand `c` is `NaN`, the comparison is ordered and operand `b` is selected.
 
 PTX ISA Notes
 
@@ -67,6 +58,5 @@ Examples
 
 ```
 slct.u32.s32  x, y, z, val;
-
 slct.ftz.u64.f32  A, B, C, fval;
 ```

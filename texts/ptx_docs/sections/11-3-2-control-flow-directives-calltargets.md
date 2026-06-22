@@ -1,4 +1,4 @@
-### 11.3.2. Control Flow Directives: .calltargets 
+### 11.3.2. Control Flow Directives: `.calltargets`
 
 `.calltargets`
 
@@ -12,11 +12,9 @@ Label:   .calltargets  list-of-functions ;
 
 Description
 
-Declares a list of potential call targets for a subsequent indirect call, and associates the list
-with the label at the start of the line.
+Declares a list of potential call targets for a subsequent indirect call, and associates the list with the label at the start of the line.
 
-All functions named in the list must be declared prior to the `.calltargets` directive, and all
-functions must have the same type signature.
+All functions named in the list must be declared prior to the `.calltargets` directive, and all functions must have the same type signature.
 
 PTX ISA Notes
 
@@ -30,10 +28,7 @@ Examples
 
 ```
 calltgt:  .calltargets  fastsin, fastcos;
-
 ...
-
 @p   call  (%f1), %r0, (%x), calltgt;
-
 ...
 ```

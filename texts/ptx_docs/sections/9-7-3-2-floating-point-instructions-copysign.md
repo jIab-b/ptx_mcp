@@ -1,4 +1,4 @@
-#### 9.7.3.2. Floating Point Instructions: copysign 
+#### 9.7.3.2. Floating Point Instructions: `copysign`
 
 `copysign`
 
@@ -8,8 +8,6 @@ Syntax
 
 ```
 copysign.type  d, a, b;
-
-
 
 .type = { .f32, .f64 };
 ```
@@ -30,6 +28,5 @@ Examples
 
 ```
 copysign.f32  x, y, z;
-
 copysign.f64  A, B, C;
 ```
